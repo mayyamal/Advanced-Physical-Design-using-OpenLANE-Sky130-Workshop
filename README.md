@@ -17,9 +17,7 @@ OpenLANE is based on several open-source projects: openROAD, Yosys, ABC, KLayout
  - `config.tcl`: 
   ‌![image](https://user-images.githubusercontent.com/57360760/182913991-b851bdac-5882-455a-867b-a72f9159caf7.png)
 
- `sky130A_sky130_fd_sc_hd_config.tcl` changed from:
- ![image](https://user-images.githubusercontent.com/57360760/182912133-d26ad015-7ce8-431e-b362-f4d95788034b.png)
-  to:
+ `sky130A_sky130_fd_sc_hd_config.tcl`:
  ![image](https://user-images.githubusercontent.com/57360760/182912349-15911f31-7eda-46c0-9a67-5b3eeebd2456.png)
  
 - Afterwards we prep the design:
