@@ -27,7 +27,8 @@ OpenLANE is based on several open-source projects: openROAD, Yosys, ABC, KLayout
  ![image](https://user-images.githubusercontent.com/57360760/182964446-0c2c56a3-b246-4a2b-b9d0-d7dc4cf4be08.png)
 
 The merged LEF files are found in the `merged.lef`. It contains information about the technology and the cells in the SCL. This is an example of a DFF cell:
-![image](https://user-images.githubusercontent.com/57360760/182928311-fc44e22d-ce96-45b5-8b8c-ba3114d2857e.png)
+ ![image](https://user-images.githubusercontent.com/57360760/182964659-11209850-2bb9-41fe-b9c6-eaf42cb1a9f1.png)
+
  
 -  
 
