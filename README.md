@@ -23,6 +23,9 @@ OpenLANE is based on several open-source projects: openROAD, Yosys, ABC, KLayout
 ![image](https://user-images.githubusercontent.com/57360760/182914183-6561f0ab-b0c5-45b5-89f4-2cd99b129ac4.png)
 - In `/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a` a `runs` folder is created:
 ![image](https://user-images.githubusercontent.com/57360760/182914774-162b17c0-71da-485f-9cc7-e1029d627409.png)
+The merged LEF files are found in the file `merged.lef`. It contains information about the technology and the cells in the SCL. This is an example of a DFF cell:
+![image](https://user-images.githubusercontent.com/57360760/182928311-fc44e22d-ce96-45b5-8b8c-ba3114d2857e.png)
+
 
 
  
