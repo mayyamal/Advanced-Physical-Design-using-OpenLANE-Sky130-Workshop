@@ -14,8 +14,7 @@ OpenLANE is based on several open-source projects: openROAD, Yosys, ABC, KLayout
  ![image](https://user-images.githubusercontent.com/57360760/182905986-db82a812-0e88-4e9b-a9d7-da47cebe2a83.png)
  
  - In `config.tcl` as well as in `sky130A_sky130_fd_sc_hd_config.tcl` I changed the `CLOCK_PERIOD` as show in the lab videos:
- - 
- `config.tcl`: 
+ - `config.tcl`: 
   ‌![image](https://user-images.githubusercontent.com/57360760/182913991-b851bdac-5882-455a-867b-a72f9159caf7.png)
 
  `sky130A_sky130_fd_sc_hd_config.tcl` changed from:
