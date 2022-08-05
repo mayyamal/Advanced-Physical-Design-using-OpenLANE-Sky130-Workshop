@@ -3,7 +3,9 @@
 
 
 The goal of openLANE is to produce a clean GDSII layout with no human intervention. OpenLANE already includes large number of design examples.
-OpenLANE is based on several open-source projects: openROAD, Yosys, ABC, KLayout, Fault, QFlow, Magic
+OpenLANE is based on several open-source projects: openROAD, Yosys, ABC, KLayout, Fault, QFlow, Magic.
+
+Fully automated open-source end-to-end ASIC design flow
 
 ## Day 1 Inception of open-source EDA, openLANE and SkyWater 130
 
