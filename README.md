@@ -97,7 +97,7 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
   ![image](https://user-images.githubusercontent.com/57360760/183252550-e01c65a8-359c-4232-976c-1cf8d8614355.png)<br/>
   In these examples the shown metal layers are metal2 and metal3 forhorizontal and vertical pins (:question: shouldn't they be metal3 and metal4)
 
-
+- After floorplanning, the next stage is the **placement** stage (`run_placement`). In this step, the position of the standard cells is fixed. 
 
 
 
