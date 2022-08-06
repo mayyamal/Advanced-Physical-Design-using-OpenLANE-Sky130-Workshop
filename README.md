@@ -20,7 +20,7 @@ Fully automated open-source end-to-end ASIC design flow
   ![image](https://user-images.githubusercontent.com/57360760/183244530-350722fd-ff90-4817-ad81-2b594a7a886e.png)
  
 
- - `sky130A_sky130_fd_sc_hd_config.tcl`:
+ - `sky130A_sky130_fd_sc_hd_config.tcl`:/
   ![image](https://user-images.githubusercontent.com/57360760/183244638-9ee4e49d-33f4-44aa-b1bf-08985b3c850e.png)
 
  
