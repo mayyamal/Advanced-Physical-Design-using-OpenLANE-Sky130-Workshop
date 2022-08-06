@@ -75,6 +75,7 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
 
 - The new content of `sky130A_sky130_fd_sc_hd_config.tcl` is <br/>
 ![image](https://user-images.githubusercontent.com/57360760/183256588-ddfeb0b1-b8f0-469f-8b9f-4adb1e90f16f.png)
+❗Don't forget to prep the design after changing values in the config files, and rerun synthesis and floorplanning
 
 
 - Since the values in `sky130A_sky130_fd_sc_hd_config.tcl` have higher precedence, the current values of this variables for the current flow,after `run_floorplan`, are: <br/>
@@ -94,7 +95,7 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
   ![image](https://user-images.githubusercontent.com/57360760/183255187-be66c9e5-e11c-46f6-95f8-d3f9526ef94d.png)<br/>  
   ![image](https://user-images.githubusercontent.com/57360760/183252471-e67e04a3-9e2c-4497-aeae-fa690b348839.png)<br/>
   ![image](https://user-images.githubusercontent.com/57360760/183252550-e01c65a8-359c-4232-976c-1cf8d8614355.png)<br/>
-  In these examples the shown metal layers are metal2 and metal3 forhorizontal and vertical pins (:question: shouldn't they be metal3 and metal4 :question:)
+  In these examples the shown metal layers are metal2 and metal3 forhorizontal and vertical pins (:question shouldn't they be metal3 and metal4)
 
 
 
