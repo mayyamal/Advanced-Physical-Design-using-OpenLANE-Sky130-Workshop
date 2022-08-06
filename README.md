@@ -11,15 +11,18 @@ Fully automated open-source end-to-end ASIC design flow
 
 - From `‌/Desktop/work/tools/openlane_working_dir/openlane` we should start docker and execute the following commands:
  ![image](https://user-images.githubusercontent.com/57360760/182897041-3674f729-4e5d-4a5b-8b61-57ae81fab4ce.png)
+ 
 - In this workshop we are using the **picorv32a** design: 
  ![image](https://user-images.githubusercontent.com/57360760/182905986-db82a812-0e88-4e9b-a9d7-da47cebe2a83.png)
  
 - In `config.tcl` as well as in `sky130A_sky130_fd_sc_hd_config.tcl` I changed the `CLOCK_PERIOD` as show in the lab videos:
- - `config.tcl`: 
-  ![image](https://user-images.githubusercontent.com/57360760/182956386-3816fb45-33a6-4bad-bf90-b67da7228b19.png) 
+ - `config.tcl`. The variables used in this files are described in Day 2 and can be found in the `/Desktop/work/tools/openlane_working_dir/openlane/configuration/README.md` file.
+  ![image](https://user-images.githubusercontent.com/57360760/183244530-350722fd-ff90-4817-ad81-2b594a7a886e.png)
+ 
 
  - `sky130A_sky130_fd_sc_hd_config.tcl`:
-  ![image](https://user-images.githubusercontent.com/57360760/182912349-15911f31-7eda-46c0-9a67-5b3eeebd2456.png)
+  ![image](https://user-images.githubusercontent.com/57360760/183244638-9ee4e49d-33f4-44aa-b1bf-08985b3c850e.png)
+
  
 - Afterwards we prep the design:
  ![image](https://user-images.githubusercontent.com/57360760/182964268-909ea4f1-47a2-4656-8771-a5168023a7eb.png)
