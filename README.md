@@ -32,7 +32,7 @@ Fully automated open-source end-to-end ASIC design flow
  ![image](https://user-images.githubusercontent.com/57360760/182964659-11209850-2bb9-41fe-b9c6-eaf42cb1a9f1.png)
 
  
-- Finally we run the synthesis using `run_synthesis`: ![image](https://user-images.githubusercontent.com/57360760/182968222-db42351d-3ffa-430c-a4a2-2638289b1672.png)
+- Finally we run the **synthesis** using `run_synthesis`: ![image](https://user-images.githubusercontent.com/57360760/182968222-db42351d-3ffa-430c-a4a2-2638289b1672.png)
 
 
 - The flip flop ratio in my synthesized design is 10.8% (i.e., 1613/14876), where 1613 is the number of DFFs (`sky130_fd_sc_hd__dfxtp_2`) and 14876 is the total number of cells:
@@ -49,9 +49,7 @@ Fully automated open-source end-to-end ASIC design flow
 
 
 
- 
-
-
+ :question: MM I do not have the timing report he had in the video after synthesis
 
 
 
@@ -61,6 +59,13 @@ Synthesis (using yosys) converts the picorv32a RTL to a gate-level netlist using
 ## Day 2 Good floorplan vs bad floorplan and introduction to library cells
 
 As described in Day1 there are several floorplans: chip floor-planning, macro floor-planning, power planning
+
+- The next step after synthesis is **floorplan**. Before running the floorplan, we need to do some congiguration :question: MM- elaborate
+
+ ![image](https://user-images.githubusercontent.com/57360760/183244330-a67fe66a-caa5-45e9-b809-0f9f8f2717b0.png)
+ 
+ - The `README` file shows all the variables/switches required at different stages of the desing flow. 
+
 
 
 ## Day 3 Design library cell using Magic Layout and ngspice characterization
