@@ -75,11 +75,24 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
 - The new content of `sky130A_sky130_fd_sc_hd_config.tcl` is <br/>
 ![image](https://user-images.githubusercontent.com/57360760/183249986-97fd374b-9c14-4da6-b65b-9aa724df4959.png)
 
-- Since the values in `sky130A_sky130_fd_sc_hd_config.tcl` have higher precedence, the current values of this variables after `run_floorplan` are: <br/>
+- Since the values in `sky130A_sky130_fd_sc_hd_config.tcl` have higher precedence, the current values of this variables for the current flow,after `run_floorplan`, are: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183251143-5a8a9e7f-b799-4cf7-a4df-551f025af44a.png)
 
-- The same values can be seen in `<path_to_run>/config.tcl`: <br/>
+- The same values for the current flow can be seen in `<path_to_run>/config.tcl`: <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183251745-75dcb57c-5b34-47e4-895b-b8457b294792.png) <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183251682-a6b06422-2b4b-4bf7-9fb8-a15cfef382a1.png)
+
+- The area of the chip as specified in `/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/06-08_10-41/results/floorplan/picorv32a.floorplan.def` is 662.87 x 673.59 microns
+ ![image](https://user-images.githubusercontent.com/57360760/183251935-13981799-e9d9-4a22-9092-164a1e16419b.png)
+ 
+ - To see the layout after the floorplan, we use **magic**: <br/>
+  ![image](https://user-images.githubusercontent.com/57360760/183252206-0d6f0364-c0fa-4c27-a757-ef052ce3e084.png)
+  ![image](https://user-images.githubusercontent.com/57360760/183252397-d6ef868e-313e-4b0c-be36-f4637dcf11ee.png)
+  In my examples I have metal2 and metal3 fro the H and V, instead of metal3 and metal4 :question:
+  ![image](https://user-images.githubusercontent.com/57360760/183252471-e67e04a3-9e2c-4497-aeae-fa690b348839.png)
+  ![image](https://user-images.githubusercontent.com/57360760/183252550-e01c65a8-359c-4232-976c-1cf8d8614355.png)
+
+
 
 
 
