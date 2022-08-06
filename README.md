@@ -86,7 +86,7 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
 - The area of the chip as specified in `/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/06-08_10-41/results/floorplan/picorv32a.floorplan.def` is 662.87 x 673.59 microns
  ![image](https://user-images.githubusercontent.com/57360760/183251935-13981799-e9d9-4a22-9092-164a1e16419b.png)
  
- - To see the layout after the floorplan, we use **magic**: <br/>
+ - To see the layout after the floorplan, we use **magic** `<path_to>results/floorplan$ magic -T ../../../../../../../pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def` & <br/>
   ![image](https://user-images.githubusercontent.com/57360760/183255187-be66c9e5-e11c-46f6-95f8-d3f9526ef94d.png)<br/>
   ![image](https://user-images.githubusercontent.com/57360760/183252397-d6ef868e-313e-4b0c-be36-f4637dcf11ee.png)<br/>
   
