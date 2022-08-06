@@ -75,10 +75,12 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
 - The new content of `sky130A_sky130_fd_sc_hd_config.tcl` is <br/>
 ![image](https://user-images.githubusercontent.com/57360760/183249986-97fd374b-9c14-4da6-b65b-9aa724df4959.png)
 
+- Since the values in `sky130A_sky130_fd_sc_hd_config.tcl` have higher precedence, the current values of this varibales after `run_floorplan` are: <br/>
+ 
 
-- To check the precedence of switches go to `<run>/logs/floorplan/ioPlacer.log` and do Shift+G:
- ![image](https://user-images.githubusercontent.com/57360760/183246149-d38c328b-649d-4c84-8f3a-f6a0524954a4.png)
+
 - The values from `config.tcl` are +1 here
+ ![image](https://user-images.githubusercontent.com/57360760/183251048-5ba587c8-e0b3-4f47-bd9e-6172559311f2.png)
 
 
 - The `<run>/config.tcl` shows the configuration taken by the flow. And he had a mistake, since the defautl values were not overwritten:
