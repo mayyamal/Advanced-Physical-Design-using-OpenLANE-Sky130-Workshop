@@ -79,17 +79,6 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
  ![image](https://user-images.githubusercontent.com/57360760/183251143-5a8a9e7f-b799-4cf7-a4df-551f025af44a.png)
 
 
-- The values from `config.tcl` are +1 here
- ![image](https://user-images.githubusercontent.com/57360760/183251048-5ba587c8-e0b3-4f47-bd9e-6172559311f2.png)
-
-
-- The `<run>/config.tcl` shows the configuration taken by the flow. And he had a mistake, since the defautl values were not overwritten:
-- ![image](https://user-images.githubusercontent.com/57360760/183246233-cd002ceb-4ae8-43d6-99e7-73f3e9a8c07f.png)
-- That was because the values in the `sky130A_sky130_fd_sc_hd_config.tcl` were not changed:
-- ![image](https://user-images.githubusercontent.com/57360760/183246276-b5cfd82c-6ced-42a2-b856-f016231f0563.png)
-
-
-
 
 
 
