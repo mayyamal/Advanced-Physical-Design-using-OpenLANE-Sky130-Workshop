@@ -83,7 +83,8 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
 
 - The same values for the current flow can be seen in `<path_to_run>/config.tcl`: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183251745-75dcb57c-5b34-47e4-895b-b8457b294792.png) <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183251682-a6b06422-2b4b-4bf7-9fb8-a15cfef382a1.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183257495-a7ab1fb9-6f74-4bee-b59c-f1113f6d0320.png)
+ 
 
 - The area of the chip as specified in `/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/06-08_10-41/results/floorplan/picorv32a.floorplan.def` is 662.87 x 673.59 microns
  ![image](https://user-images.githubusercontent.com/57360760/183251935-13981799-e9d9-4a22-9092-164a1e16419b.png)
