@@ -74,7 +74,8 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
 ![image](https://user-images.githubusercontent.com/57360760/183245258-06e18032-5007-41f3-9d93-53c10e506bbf.png)
 
 - The new content of `sky130A_sky130_fd_sc_hd_config.tcl` is <br/>
-![image](https://user-images.githubusercontent.com/57360760/183249986-97fd374b-9c14-4da6-b65b-9aa724df4959.png)
+![image](https://user-images.githubusercontent.com/57360760/183256588-ddfeb0b1-b8f0-469f-8b9f-4adb1e90f16f.png)
+
 
 - Since the values in `sky130A_sky130_fd_sc_hd_config.tcl` have higher precedence, the current values of this variables for the current flow,after `run_floorplan`, are: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183251143-5a8a9e7f-b799-4cf7-a4df-551f025af44a.png)
