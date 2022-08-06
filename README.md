@@ -74,6 +74,19 @@ The new content of `config.tcl` is <br/>
 
 The new content of `sky130A_sky130_fd_sc_hd_config.tcl` is <br/>
 
+- To check the precedence of switches go to `<run>/logs/floorplan/ioPlacer.log` and do Shift+G:
+- ![image](https://user-images.githubusercontent.com/57360760/183246149-d38c328b-649d-4c84-8f3a-f6a0524954a4.png)
+- The values from `config.tcl` are +1 here
+
+
+- The `<run>/config.tcl` shows the configuration taken by the flow. And he had a mistake, since the defautl values were not overwritten:
+- ![image](https://user-images.githubusercontent.com/57360760/183246233-cd002ceb-4ae8-43d6-99e7-73f3e9a8c07f.png)
+- That was because the values in the `sky130A_sky130_fd_sc_hd_config.tcl` were not changed:
+- ![image](https://user-images.githubusercontent.com/57360760/183246276-b5cfd82c-6ced-42a2-b856-f016231f0563.png)
+
+
+
+
 
 
 ## Day 3 Design library cell using Magic Layout and ngspice characterization
