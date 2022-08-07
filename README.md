@@ -21,14 +21,11 @@ Fully automated open-source end-to-end ASIC design flow
  - `config.tcl`. The variables used in this files are described in Day 2 and can be found in the `/Desktop/work/tools/openlane_working_dir/openlane/configuration/README.md` file.
   ![image](https://user-images.githubusercontent.com/57360760/183244530-350722fd-ff90-4817-ad81-2b594a7a886e.png)
  
-
  - `sky130A_sky130_fd_sc_hd_config.tcl`:<br/>
   ![image](https://user-images.githubusercontent.com/57360760/183244638-9ee4e49d-33f4-44aa-b1bf-08985b3c850e.png)
-
  
 - Afterwards we prep the design:
  ![image](https://user-images.githubusercontent.com/57360760/182964268-909ea4f1-47a2-4656-8771-a5168023a7eb.png)
-
 
 - In `/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a` a `runs` folder is created:
  ![image](https://user-images.githubusercontent.com/57360760/182964446-0c2c56a3-b246-4a2b-b9d0-d7dc4cf4be08.png)
@@ -170,6 +167,18 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
 - We copy the libraries: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183310022-ed216524-1cc3-4c70-b587-5fd45349b094.png) <br />
 - We modify the `config.tcl` <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183311233-8a7fbb7e-3d41-47a6-a70b-62ff50bad86b.png)
+
+ 
+- We prep the design <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183311139-588e08cb-ff0f-4ab0-9a47-18c22732a565.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183313045-20960796-72e4-4ec0-9042-dab2e23eef70.png)
+- After `run_synthesis` we can see the new cell: <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183313229-19bb9c27-35cc-43f0-9b25-f7e7570fbb79.png)
+
+
+
+
  
 
 
