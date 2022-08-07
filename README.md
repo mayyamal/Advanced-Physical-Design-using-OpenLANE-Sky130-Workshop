@@ -118,7 +118,10 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
 - We can see the layout of the invertor: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183284512-ecf1438b-4200-4614-8fdd-e160ca58c4a8.png)
 - To extract it to SPICE we use the following commands in `tkcon 
- ![image](https://user-images.githubusercontent.com/57360760/183287349-5bd3c5ac-3a22-44b0-ab29-3cb1d9aa4859.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183287349-5bd3c5ac-3a22-44b0-ab29-3cb1d9aa4859.png) <br/>
+ - This is what the spice file currently looks like: <br/>
+  ![image](https://user-images.githubusercontent.com/57360760/183287424-1229b84f-f661-4ca9-aa67-71a9f68651f5.png)
+
 
 
 
