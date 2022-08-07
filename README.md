@@ -1,6 +1,8 @@
 # Advanced-Physical-Design-using-OpenLANE-Sky130-Workshop
 
+## RANDOM 
 
+`prep -design picorv32a -tag <tag name of the run>`
 
 The goal of openLANE is to produce a clean GDSII layout with no human intervention. OpenLANE already includes large number of design examples.
 OpenLANE is based on several open-source projects: openROAD, Yosys, ABC, KLayout, Fault, QFlow, Magic.
