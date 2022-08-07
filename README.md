@@ -129,9 +129,15 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
 - When we pass this file in `ngspice` we get the folloeing output: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183288698-e6f17611-2f0a-439f-8b5b-1101c723531a.png)
 - The plot: <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183288774-e791b411-e193-47bc-981c-66d34de3318b.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183288981-74a6e549-c74b-4718-8ae0-7cfeb46053d1.png)
+
  
-- 
+- Next we should calculate the rise transition (20% to 80%), which appx. is `2.20-2.16 = 0.04 ns` <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183289312-c5548271-3d18-442d-be73-15f442b1c0ee.png)
+
+- Similarly, the fall transition (80% to 20%) is appx. `2.12 - 2.17 = 0.05` <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183289454-f744dffa-5962-4166-abab-e96f99e86854.png)
+
 
 
 
