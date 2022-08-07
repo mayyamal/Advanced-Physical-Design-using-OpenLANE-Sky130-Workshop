@@ -120,7 +120,20 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
 - To extract it to SPICE we use the following commands in `tkcon 
  ![image](https://user-images.githubusercontent.com/57360760/183287349-5bd3c5ac-3a22-44b0-ab29-3cb1d9aa4859.png) <br/>
  - This is what the spice file currently looks like: <br/>
-  ![image](https://user-images.githubusercontent.com/57360760/183287424-1229b84f-f661-4ca9-aa67-71a9f68651f5.png)
+  ![image](https://user-images.githubusercontent.com/57360760/183287424-1229b84f-f661-4ca9-aa67-71a9f68651f5.png) 
+ - This is his file: <br/>
+  ![image](https://user-images.githubusercontent.com/57360760/183287453-374e8543-51a9-4abb-a038-d0ad369d1600.png)
+  - After defining the extra connections (i.e., `Vdd, Vss, Va`, the file looks like this: <br/>
+   ![image](https://user-images.githubusercontent.com/57360760/183288621-1707570b-fa93-441e-9a89-c5efa4bb630b.png)
+  - When we pass this file in `ngspice` we get the folloeing output: <br/>
+   ![image](https://user-images.githubusercontent.com/57360760/183288698-e6f17611-2f0a-439f-8b5b-1101c723531a.png)
+
+
+
+
+
+   
+
 
 
 
