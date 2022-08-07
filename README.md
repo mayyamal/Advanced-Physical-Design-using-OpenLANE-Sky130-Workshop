@@ -175,6 +175,17 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
  ![image](https://user-images.githubusercontent.com/57360760/183313045-20960796-72e4-4ec0-9042-dab2e23eef70.png)
 - After `run_synthesis` we can see the new cell: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183313229-19bb9c27-35cc-43f0-9b25-f7e7570fbb79.png)
+ as well as a slack violation ❓ (is wsn that) <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183313291-24df1174-4ce1-4fcd-9cf5-f31972cb3d8f.png)
+
+- To reduce the slack: 
+- Current values: `Chip area for module '\picorv32a': 147950.646400
+ tns -3232.44
+ wns -26.53`
+ 
+- Try with the `SYNTH_STRATEGY`
+![image](https://user-images.githubusercontent.com/57360760/183315166-4d247006-156f-4145-a81e-f0c134627e2b.png)
+
 
 
 
