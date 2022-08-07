@@ -117,16 +117,23 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
  ![image](https://user-images.githubusercontent.com/57360760/183284463-c8867b74-6886-4a6d-bfbc-89cf1864dfcb.png)
 - We can see the layout of the invertor: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183284512-ecf1438b-4200-4614-8fdd-e160ca58c4a8.png)
-- To extract it to SPICE we use the following commands in `tkcon 
+- To extract it to SPICE we use the following commands in `tkcon` 
  ![image](https://user-images.githubusercontent.com/57360760/183287349-5bd3c5ac-3a22-44b0-ab29-3cb1d9aa4859.png) <br/>
- - This is what the spice file currently looks like: <br/>
-  ![image](https://user-images.githubusercontent.com/57360760/183287424-1229b84f-f661-4ca9-aa67-71a9f68651f5.png) 
- - This is his file: <br/>
-  ![image](https://user-images.githubusercontent.com/57360760/183287453-374e8543-51a9-4abb-a038-d0ad369d1600.png)
-  - After defining the extra connections (i.e., `Vdd, Vss, Va`, the file looks like this: <br/>
-   ![image](https://user-images.githubusercontent.com/57360760/183288621-1707570b-fa93-441e-9a89-c5efa4bb630b.png)
-  - When we pass this file in `ngspice` we get the folloeing output: <br/>
-   ![image](https://user-images.githubusercontent.com/57360760/183288698-e6f17611-2f0a-439f-8b5b-1101c723531a.png)
+- This is what the spice file currently looks like: <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183287424-1229b84f-f661-4ca9-aa67-71a9f68651f5.png) 
+- This is his file: <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183287453-374e8543-51a9-4abb-a038-d0ad369d1600.png)
+- After defining the extra connections (i.e., `Vdd, Vss, Va`, the file looks like this: <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183288904-c6229596-ac81-4bd9-80de-c733645c2845.png)
+
+- When we pass this file in `ngspice` we get the folloeing output: <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183288698-e6f17611-2f0a-439f-8b5b-1101c723531a.png)
+- The plot: <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183288774-e791b411-e193-47bc-981c-66d34de3318b.png)
+ 
+- 
+
+
 
 
 
