@@ -138,6 +138,13 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
 - Similarly, the fall transition (80% to 20%) is appx. `2.12 - 2.17 = 0.05` <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183289454-f744dffa-5962-4166-abab-e96f99e86854.png)
 
+- The cell propagation delay (cell rise delay) is appx.  `2.18 - 2.15 = 0.03` <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183289577-08c324d7-3d65-4cfc-8927-dc7e0d25e22c.png) <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183289595-2338f2a1-0884-4852-8ed3-260769530292.png) <br/>
+
+- The cell fall delay is appx. `4.05 - 4.04 = 0.01` <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183289735-52bc2165-17b0-41dd-92a9-3bac0d1c86d5.png) <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183289759-2da4da63-5abd-43b2-b5f3-ad89b8b6ec20.png) <br/>
 
 
 
