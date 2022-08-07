@@ -98,16 +98,31 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
   In these examples the shown metal layers are metal2 and metal3 forhorizontal and vertical pins (:question: shouldn't they be metal3 and metal4)
 
 - After floorplanning, the next stage is the **placement** stage (`run_placement`). In this step, the position of the standard cells is fixed. <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183266900-66ebd8b2-0d91-4631-b941-8198beaf9ab4.png)
-
-
-
+ ![image](https://user-images.githubusercontent.com/57360760/183266900-66ebd8b2-0d91-4631-b941-8198beaf9ab4.png) <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183266948-4ee4b8a8-5e58-47c4-b9f2-6f87f9838794.png)
 
 
 
 ## Day 3 Design library cell using Magic Layout and ngspice characterization
 
-As described in Day1 standard cells have a reular layout.
+- Setting variables from within openLANE `%set ::env(FP_IO_MODE) 2` and `run_floorplan`. In magic we shoud see the pins not equdistant (i.e., stacked on top of each other) ❗MM try this and remove 
+- ❗When we set variables this way, we do not have to prep the design again 
+
+- SPICE simulation
+
+- Clone the repo 
+ ![image](https://user-images.githubusercontent.com/57360760/183284174-99ed03ee-c8b4-4f02-8149-e262ac81959f.png)
+- We will be doing SPICE extraction and post-layout SPICE simulation. We first copy the `sky130A.tech` file
+ ![image](https://user-images.githubusercontent.com/57360760/183284364-3ced8b22-9889-424d-b6bb-fb459d682fe9.png) <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183284463-c8867b74-6886-4a6d-bfbc-89cf1864dfcb.png)
+- We can see the layout of the invertor: <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183284512-ecf1438b-4200-4614-8fdd-e160ca58c4a8.png)
+- To extract it to SPICE we use the following commands in `tkcon 
+ ![image](https://user-images.githubusercontent.com/57360760/183287349-5bd3c5ac-3a22-44b0-ab29-3cb1d9aa4859.png)
+
+
+
+ 
 
 
 ## Day 4 Pre-layout timing analysis and importance of good clock tree
