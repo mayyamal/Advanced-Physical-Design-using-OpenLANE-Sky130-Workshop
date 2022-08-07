@@ -130,8 +130,8 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
  ![image](https://user-images.githubusercontent.com/57360760/183288698-e6f17611-2f0a-439f-8b5b-1101c723531a.png)
 - The plot: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183288981-74a6e549-c74b-4718-8ae0-7cfeb46053d1.png)
-
  
+- Library characterization of the inverter
 - Next we should calculate the rise transition (20% to 80%), which appx. is `2.20-2.16 = 0.04 ns` <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183289312-c5548271-3d18-442d-be73-15f442b1c0ee.png)
 
@@ -147,7 +147,8 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
  ![image](https://user-images.githubusercontent.com/57360760/183289759-2da4da63-5abd-43b2-b5f3-ad89b8b6ec20.png) <br/>
 
 
-
+- Magic DRC
+- The tech file gives all the information about the process 
 
 
 
