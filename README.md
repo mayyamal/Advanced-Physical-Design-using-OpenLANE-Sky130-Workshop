@@ -224,10 +224,17 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
 - In order to lower the delay, we will try to optimize the fanout values of some cells `set ::env(SYNTH_MAX_FANOUT) 4` ❓ (it was 6 before, and now it actually increased a bit): <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183389404-4b636273-0564-4091-8309-52cbda33aff8.png)
 
-- The `mux_2_1` had a very big fanout: <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183389591-44b57557-9b7e-4903-978b-48ff128c290a.png)
+- The cell `_46535_` had a very big fanout: <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183400312-ca89a909-cb82-4f3d-af20-187ac9517ca9.png)
+
 - So I tried to replace it with `mux_4_1`: <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183390358-624ddd9e-e5a5-4e19-b7c1-cdb8ed2655cb.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183400391-41c41125-69d5-40d7-ab26-df6b74d8b6de.png) <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183400592-d02b7f35-d265-4028-a889-b4a985c4ef2c.png) <br/>
+ However, nothing improved
+ 
+ - Clock Tree Synthesis
+ - 
+ 
 
  
 
