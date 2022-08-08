@@ -8,7 +8,7 @@
 - [Day 5. Final steps for RTL2GDS using tritonRoute and openST](#day-5-final-steps-for-rtl2gds-using-tritonroute-and-openst)
 
 
-The goal of [openLANE] (https://github.com/The-OpenROAD-Project/OpenLane) is to produce a clean GDSII layout with no human intervention. It is a fully automated open-source end-to-end ASIC design flow. 
+The goal of [openLANE](https://github.com/The-OpenROAD-Project/OpenLane) is to produce a clean GDSII layout with no human intervention. It is a fully automated open-source end-to-end ASIC design flow. 
 
 
 ## Day 1. Inception of open-source EDA, openLANE and SkyWater 130
@@ -88,7 +88,7 @@ The goal of [openLANE] (https://github.com/The-OpenROAD-Project/OpenLane) is to 
 
 ## Day 3. Design library cell using Magic Layout and ngspice characterization
 
-- In this part of the lab, we will use the [CMOS inverter standard cell] (https://github.com/nickson-jose/vsdstdcelldesign), plug it into the openlane flow, and integrate it into the pivorv32a design. <br/>
+- In this part of the lab, we will use the [CMOS inverter standard cell](https://github.com/nickson-jose/vsdstdcelldesign), plug it into the openlane flow, and integrate it into the pivorv32a design. <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183284174-99ed03ee-c8b4-4f02-8149-e262ac81959f.png)
 - We will be doing SPICE extraction and post-layout SPICE simulation. We first copy the `sky130A.tech` file, which gives all the information about the SkyWater sky130 fabrication process <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183284364-3ced8b22-9889-424d-b6bb-fb459d682fe9.png) <br/>
