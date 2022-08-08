@@ -210,9 +210,15 @@ The timing characterization, in turn, includes timing treshold, propagation dela
 
 - Next, we will try to optimize the fanout values of some cells> . The cell `_42923_` had a very big fanout: <br/> 
  ![image](https://user-images.githubusercontent.com/57360760/183428967-a23549eb-e010-43a2-8d34-0b8c1befbd4a.png) <br/>
+ 
+- So I tried to replace i with the following cell: <br/> 
  ![image](https://user-images.githubusercontent.com/57360760/183429376-2dfa1db9-2b40-40d6-9ea8-a73ab84e9afa.png) <br/>
+ 
+-The slack improved a bit, but it is still significantly big: <br/> 
  ![image](https://user-images.githubusercontent.com/57360760/183429698-a21bd345-f4d1-4f44-9196-85f2630216e7.png) <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183429943-e10761e8-0353-4aef-997e-4c8badc5d500.png)
+ 
+- To verify thatr the netlist is modified we will search for the cell `_42923_` and verify it was changed from `dfxtp_2` to `dfxtp_4`: <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183429943-e10761e8-0353-4aef-997e-4c8badc5d500.png) <br/>
 
 
 The cell `_46535_` had a very big fanout: <br/>
@@ -225,14 +231,11 @@ The cell `_46535_` had a very big fanout: <br/>
 - The slack improved a bit: >br/> 
   ![image](https://user-images.githubusercontent.com/57360760/183409416-34c4fd7c-05ae-45b5-ac11-410e653b95b5.png)
 
-- I changed the following: <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183409994-35a8a661-7464-4ee1-843c-4b94eb37423c.png) <br/>
- but nothing changed
  
 - After we made these changed in OpenSTA, we should make sure that openLANE will use them: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183410981-550d1246-189f-4d53-b8be-0a6d7be0a022.png)
 
-- To verify thatr the netlist is modified we will search for the cell `_46875_` and verify it was changed from `dfxtp_2` to `dfxtp_4`: <br/>
+- To verify thatr the netlist is modified we will search for the cell `_42923_` and verify it was changed from `dfxtp_2` to `dfxtp_4`: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183419001-2915d5f6-43e5-4040-b8f6-a33dc3a344cc.png) <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183430503-65f665a0-e278-4d56-bea9-3b2539bdfc06.png) <br/>
 
