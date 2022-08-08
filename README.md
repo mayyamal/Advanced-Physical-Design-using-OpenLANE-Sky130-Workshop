@@ -211,37 +211,24 @@ The timing characterization, in turn, includes timing treshold, propagation dela
 - Next, we will try to optimize the fanout values of some cells> . The cell `_42923_` had a very big fanout: <br/> 
  ![image](https://user-images.githubusercontent.com/57360760/183428967-a23549eb-e010-43a2-8d34-0b8c1befbd4a.png) <br/>
  
-- So I tried to replace i with the following cell: <br/> 
+- So I tried to replace it with the following cell: <br/> 
  ![image](https://user-images.githubusercontent.com/57360760/183429376-2dfa1db9-2b40-40d6-9ea8-a73ab84e9afa.png) <br/>
  
--The slack improved a bit, but it is still significantly big: <br/> 
+- The slack improved a bit, but it is still significantly big: <br/> 
  ![image](https://user-images.githubusercontent.com/57360760/183429698-a21bd345-f4d1-4f44-9196-85f2630216e7.png) <br/>
  
-- To verify thatr the netlist is modified we will search for the cell `_42923_` and verify it was changed from `dfxtp_2` to `dfxtp_4`: <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183429943-e10761e8-0353-4aef-997e-4c8badc5d500.png) <br/>
+- To verify that the netlist is modified we will search for the cell `_42923_` and verify it was changed from `dfxtp_2` to `dfxtp_4`: <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183430503-65f665a0-e278-4d56-bea9-3b2539bdfc06.png) <br/>
 
 
-The cell `_46535_` had a very big fanout: <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183408431-fbeb3ff4-7ef8-4516-a21a-4c88a352936f.png) <br/>
- 
-- So I tried to replace ithe following cells <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183409179-3a354e8d-3282-4423-bb63-0582884ea220.png) <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183400592-d02b7f35-d265-4028-a889-b4a985c4ef2c.png) <br/>
- 
-- The slack improved a bit: >br/> 
-  ![image](https://user-images.githubusercontent.com/57360760/183409416-34c4fd7c-05ae-45b5-ac11-410e653b95b5.png)
-
- 
 - After we made these changed in OpenSTA, we should make sure that openLANE will use them: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183410981-550d1246-189f-4d53-b8be-0a6d7be0a022.png)
 
 - To verify thatr the netlist is modified we will search for the cell `_42923_` and verify it was changed from `dfxtp_2` to `dfxtp_4`: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183419001-2915d5f6-43e5-4040-b8f6-a33dc3a344cc.png) <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183430503-65f665a0-e278-4d56-bea9-3b2539bdfc06.png) <br/>
-
+ 
 
 - Next we do floorplanning and placement using the commands mentioned before: <br/>
-- Then we `run_floorplan`. Since this command produced an error, it was suggested to use the following separate commands which give an error-free flow: <br/>
  `init_floorplan` <br/>
  `place_io` <br/>
  `global_placement_or` <br/>
