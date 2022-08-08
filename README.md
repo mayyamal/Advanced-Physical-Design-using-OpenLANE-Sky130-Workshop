@@ -229,7 +229,11 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
  
   Or in the ~=2.9 slack`_42923_` : <br/> 
  ![image](https://user-images.githubusercontent.com/57360760/183428967-a23549eb-e010-43a2-8d34-0b8c1befbd4a.png) <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183429376-2dfa1db9-2b40-40d6-9ea8-a73ab84e9afa.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183429376-2dfa1db9-2b40-40d6-9ea8-a73ab84e9afa.png) <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183429698-a21bd345-f4d1-4f44-9196-85f2630216e7.png) <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183429943-e10761e8-0353-4aef-997e-4c8badc5d500.png)
+
+
 
 
 
