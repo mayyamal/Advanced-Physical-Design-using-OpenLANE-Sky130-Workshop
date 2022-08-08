@@ -274,9 +274,7 @@ The timing characterization, in turn, includes timing treshold, propagation dela
 
 - Let's try to modify the `CTS_CLK_BUFFER_LIST` and remove the `sky130_fd_sc_hd__clkbuf_1` buffer <br/>
 ![image](https://user-images.githubusercontent.com/57360760/183454743-41da9f9b-58c7-4f37-bdd6-b4846ce789b8.png)  <br/>
-- We have to forcefully stop the `run_cts`, since it was stuck!
- 
-- In order to make We need to do the following: <br/>
+- We have to forcefully stop the `run_cts`, since it was stuck! We have to update the `.def` file and `run_cts` again: <br/>
   ![image](https://user-images.githubusercontent.com/57360760/183457820-cd7e3e2a-08e3-4bd9-bc6f-56f681f9abfc.png) <br/>
   ![image](https://user-images.githubusercontent.com/57360760/183458124-dcaff153-f43e-4528-9902-78007430930c.png) <br/>
   ![image](https://user-images.githubusercontent.com/57360760/183458294-c0820820-e410-4204-9aa0-2b28a3e8ea58.png) <br/>
