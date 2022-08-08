@@ -205,6 +205,7 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
  
 - After `global_placement_or`: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183318749-f9e34390-4e61-4052-93b1-8a4fda00e1e3.png)
+ ❗ SLack violated, will be fixed later
 - After `detailed_placement`: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183318839-9d77b690-7268-4e8a-bfcc-5b6adfd437a5.png)
 - After the second `detailed_placement`: <br/>
@@ -213,6 +214,8 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
 - To check whether the custom inverter cell is added to the current flow we invoke `magic` and we search for the `sky130_vsdinv` cell: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183319703-05713536-3866-430e-8b8b-1f4b6ddcb6c4.png)
 
+- Timing analysis <br/>
+- 
 
   
 
