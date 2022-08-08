@@ -172,7 +172,7 @@ The timing characterization, in turn, includes timing treshold, propagation dela
 - In order to try to reduce the slack, we modified the following switches: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183317231-860f6d37-98f5-44c2-8af5-3314d869aac3.png) <br/>
 
-- The new values after synthesis are (after rmoving/renaming the old `picorv32a.synthesis.v` file): <br/>
+- The new values after synthesis are (after removing/renaming the old `picorv32a.synthesis.v` file): <br/>
  `Chip area for module '\picorv32a': 209179.369600` <br/> 
  `tns -266.36` <br/>
  `wns -2.95` <br/>
@@ -190,17 +190,17 @@ The timing characterization, in turn, includes timing treshold, propagation dela
  
 - After `global_placement_or`: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183318749-f9e34390-4e61-4052-93b1-8a4fda00e1e3.png) <br/>
- ❗ SLack is still violated, will be fixed later. <br/>
-- After `detailed_placement`: <br/>
+ 
+ - After `detailed_placement`: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183318839-9d77b690-7268-4e8a-bfcc-5b6adfd437a5.png) <br/>
 - After the second `detailed_placement`: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183318974-31b4a8d0-48ed-453e-91b1-4393c88b0efd.png)
  
-- To check whether the custom inverter cell is added to the current flow we invoke `magic` and we search for the `sky130_vsdinv` cell: <br/>
+- To check whether the custom inverter cell is added to the current flow, we invoke `magic` and search for the `sky130_vsdinv` cell: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183319703-05713536-3866-430e-8b8b-1f4b6ddcb6c4.png) <br/>
 
-- Timing analysis <br/>
-- In `<path_to>/openlane` I created the `pre_sta.conf` file, on which the pre-layout static timing analysis is based. <br/>
+- Next we will perform **pre-layout static timing analysis**. <br/>
+- In `<path_to>/openlane` we created the `pre_sta.conf` file, on which the pre-layout static timing analysis is based. <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183381744-29db9afb-f359-433b-93b1-4ebd157d827c.png) <br/>
 - After running `sta pre_sta.conf` from the  `openlane` directory, I got the following setup violations, which are same as in the last synthesis step before: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183382349-ee51baf3-e8a2-44c3-893a-63abbe00a702.png) <br/>
