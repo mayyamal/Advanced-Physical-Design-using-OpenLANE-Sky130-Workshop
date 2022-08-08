@@ -208,7 +208,7 @@ The timing characterization, in turn, includes timing treshold, propagation dela
 - I tried lowering the `SYNTH_MAX_FANOUT` switch from 6 to 4 (i.e., `set ::env(SYNTH_MAX_FANOUT) 4`), but the slack increased: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183389404-4b636273-0564-4091-8309-52cbda33aff8.png) <br/>
 
-- Next, we will try to optimize the fanout values of some cells> . The cell `_42923_` had a very big fanout: <br/> 
+- Next, we will try to optimize the fanout values of some cells. The cell `_42923_` had a very big fanout: <br/> 
  ![image](https://user-images.githubusercontent.com/57360760/183428967-a23549eb-e010-43a2-8d34-0b8c1befbd4a.png) <br/>
  
 - So I tried to replace it with the following cell: <br/> 
