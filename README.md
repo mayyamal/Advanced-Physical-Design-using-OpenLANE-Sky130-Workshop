@@ -3,10 +3,14 @@
 
 <!-- toc -->
 
-## RANDOM 
+- [Day 1. Inception of open-source EDA, openLANE and SkyWater 130\](#day-1-inception-of-open-source-eda--openlane-and-skywater-130-)
+- [Day 2. Good floorplan vs bad floorplan and introduction to library cells](#day-2-good-floorplan-vs-bad-floorplan-and-introduction-to-library-cells)
+- [Day 3. Design library cell using Magic Layout and ngspice characterization](#day-3-design-library-cell-using-magic-layout-and-ngspice-characterization)
+- [Day 4. Pre-layout timing analysis and importance of good clock tree](#day-4-pre-layout-timing-analysis-and-importance-of-good-clock-tree)
+- [Day 5. Final steps for RTL2GDS using tritonRoute and openSTA](#day-5-final-steps-for-rtl2gds-using-tritonroute-and-opensta)
 
-`prep -design picorv32a -tag <tag name of the run>` - if you want the results from the last run, or <br/>
-`prep -design picorv32a -tag <tag name of the run> -overwritre` - to overwrite the last configuration with the new values in the `config.tcl` file.
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 The goal of openLANE is to produce a clean GDSII layout with no human intervention. It is a fully automated open-source end-to-end ASIC design. 
 
@@ -51,24 +55,17 @@ The goal of openLANE is to produce a clean GDSII layout with no human interventi
 
 
 
-
- :question: MM I do not have the timing report he had in the video after synthesis
-
-
-
 Synthesis (using yosys) converts the picorv32a RTL to a gate-level netlist using the skywater??? standard cell library (SCL)
 
 
-## Day 2 Good floorplan vs bad floorplan and introduction to library cells
-
-As described in Day1 there are several floorplans: chip floor-planning, macro floor-planning, power planning
+## Day 2. Good floorplan vs bad floorplan and introduction to library cells
 
 - The next step after synthesis is **floorplan**. Before running the floorplan, we need to do some congiguration :question: MM- elaborate
 
  ![image](https://user-images.githubusercontent.com/57360760/183244330-a67fe66a-caa5-45e9-b809-0f9f8f2717b0.png)
  
- - The `README` file shows all the variables/switches required at different stages of the desing flow (e.g., `FP_CORE_UTIL` - the core utilization percentage; `FP_ASPECT_RATIO`  - the core's aspect ratio (height / width), `FP_IO_HMETAL`  - the metal layer on which to place the io pins horizontally (top and bottom of the die, default: `4`; `FP_IO_VMETAL`  - the metal layer on which to place the io pins vertically (sides of the die, default: `3`).
- -  This variables are set with their defaults in the `.tcl` files in the same directory (this files have the lowest precedence). For the chosen design (e.g., picorv32a), as mentioned in Day 1, they are set in the `config.tcl` and `sky130A_sky130_fd_sc_hd_config.tcl` files  in the `/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a` directory. The `sky130A_sky130_fd_sc_hd_config.tcl` has the highest precedence.
+- The `README` file shows all the variables/switches required at different stages of the desing flow (e.g., `FP_CORE_UTIL` - the core utilization percentage; `FP_ASPECT_RATIO`  - the core's aspect ratio (height / width), `FP_IO_HMETAL`  - the metal layer on which to place the io pins horizontally (top and bottom of the die, default: `4`; `FP_IO_VMETAL`  - the metal layer on which to place the io pins vertically (sides of the die, default: `3`).
+-  This variables are set with their defaults in the `.tcl` files in the same directory (this files have the lowest precedence). For the chosen design (e.g., picorv32a), as mentioned in Day 1, they are set in the `config.tcl` and `sky130A_sky130_fd_sc_hd_config.tcl` files  in the `/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a` directory. The `sky130A_sky130_fd_sc_hd_config.tcl` has the highest precedence.
 
 - The new content of `config.tcl` is <br/>
 ![image](https://user-images.githubusercontent.com/57360760/183245258-06e18032-5007-41f3-9d93-53c10e506bbf.png)
@@ -91,7 +88,7 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
  ![image](https://user-images.githubusercontent.com/57360760/183257588-fe320fa4-069e-4047-88fe-c9c538bd1db1.png)
 
  
- - To see the layout after the floorplan, we use **magic** `<path_to>results/floorplan$ magic -T ../../../../../../../pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def` & <br/>
+- To see the layout after the floorplan, we use **magic** `<path_to>results/floorplan$ magic -T ../../../../../../../pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def` & <br/>
   ![image](https://user-images.githubusercontent.com/57360760/183255187-be66c9e5-e11c-46f6-95f8-d3f9526ef94d.png)<br/>  
   ![image](https://user-images.githubusercontent.com/57360760/183252471-e67e04a3-9e2c-4497-aeae-fa690b348839.png)<br/>
   ![image](https://user-images.githubusercontent.com/57360760/183252550-e01c65a8-359c-4232-976c-1cf8d8614355.png)<br/>
@@ -103,13 +100,9 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
 
 
 
-## Day 3 Design library cell using Magic Layout and ngspice characterization
-
-- Setting variables from within openLANE `%set ::env(FP_IO_MODE) 2` and `run_floorplan`. In magic we shoud see the pins not equdistant (i.e., stacked on top of each other) ❗MM try this and remove 
-- ❗When we set variables this way, we do not have to prep the design again 
+## Day 3. Design library cell using Magic Layout and ngspice characterization
 
 - SPICE simulation
-
 - Clone the repo ❗Explain more
  ![image](https://user-images.githubusercontent.com/57360760/183284174-99ed03ee-c8b4-4f02-8149-e262ac81959f.png)
 - We will be doing SPICE extraction and post-layout SPICE simulation. We first copy the `sky130A.tech` file, which gives all the information about the SkyWater sky130 fabrication process <br/>
@@ -148,7 +141,7 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
 
 
 
-## Day 4 Pre-layout timing analysis and importance of good clock tree
+## Day 4. Pre-layout timing analysis and importance of good clock tree
 - The first step will be to extract a `lef` file out of the magic `.mag` file <br/> and then plug that file into the picorv32a flow.
 
 - First we need to make sure that several pconditions about the standard cell layout are met:
@@ -178,6 +171,9 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
  ![image](https://user-images.githubusercontent.com/57360760/183313229-19bb9c27-35cc-43f0-9b25-f7e7570fbb79.png)
  as well as a slack violation ❓ (is wsn that) <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183313291-24df1174-4ce1-4fcd-9cf5-f31972cb3d8f.png)
+ 
+- ❗ `prep -design picorv32a -tag <tag name of the run>` - if you want the results from the last run, or <br/>
+`prep -design picorv32a -tag <tag name of the run> -overwritre` - to overwrite the last configuration with the new values in the `config.tcl` file. 
 
 - Current values: 
 `Chip area for module '\picorv32a': 147950.646400
@@ -235,14 +231,11 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
  ![image](https://user-images.githubusercontent.com/57360760/183429943-e10761e8-0353-4aef-997e-4c8badc5d500.png)
 
 
-
-
-
 - So I tried to replace ithe following cells <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183409179-3a354e8d-3282-4423-bb63-0582884ea220.png) <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183400592-d02b7f35-d265-4028-a889-b4a985c4ef2c.png) <br/>
  
- - The slack improved a bit: >br/> 
+- The slack improved a bit: >br/> 
   ![image](https://user-images.githubusercontent.com/57360760/183409416-34c4fd7c-05ae-45b5-ac11-410e653b95b5.png)
 
 - I changed the following: <br/>
@@ -259,15 +252,15 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
 
 - Next we do floorplanning and placement using the commands mentioned before: <br/>
  - Then we `run_floorplan`. Since this command produced an error, it was suggested to use the following separate commands which give an error-free flow: <br/>
- `init_floorplan <br/>
- place_io <br/>
- global_placement_or <br/>
- detailed_placement <br/>
- tap_decap_or <br/>
- detailed_placement <br/>
- gen_pdn` <br/>
+ `init_floorplan` <br/>
+ `place_io` <br/>
+ `global_placement_or` <br/>
+ `detailed_placement` <br/>
+ `tap_decap_or` <br/>
+ `detailed_placement` <br/>
+ `gen_pdn` <br/>
  
- - After  `global_placement_or` <br/>
+- After  `global_placement_or` <br/>
   ![image](https://user-images.githubusercontent.com/57360760/183433520-b0117610-4a8d-401e-a4c3-0739122af748.png)
 - After first `detailed_placement` <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183433647-68dab09f-45b4-446a-96dd-b5d2f679af76.png)
@@ -275,15 +268,12 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
 - After second `detailed_placement` <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183433808-f997e2de-18d1-49ad-ab77-fa9f43189894.png)
 
-- Finaly we execute `run_cts` <br/>
+- Finaly we run the clock tree synthesis `run_cts` <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183443364-a63db80e-089b-4c0d-9f7b-dc5cbf355e92.png) <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183443900-a2ac1480-773f-4053-882b-af9f57ab8367.png)
 
 
-
-
-
-- Since the Clock Tree has been build (❓ MM check with which of the above commands), the next step is to do the post-cts timing analysis
+- The next step is to do the post-cts timing analysis.
  
 - We execute `openroad` in the openLANE environment and we will do the timing analysis with openSTA from there.  We read the `lef` and `def` files and create the `db` file <br/>
 ![image](https://user-images.githubusercontent.com/57360760/183445328-26d049b5-7e3f-4685-ad08-24e95e78da4f.png)
@@ -296,7 +286,7 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
 - Setup slack <br/> 
  ![image](https://user-images.githubusercontent.com/57360760/183449248-7ae39b8b-a0e7-426e-ad1a-cd568cb32b2f.png) <br/>
  
-- The slacks must be corrected. But this analysis is not correct ❓ why
+- The slacks must be corrected. However, this analysis is not correct ❓ why
 
 - We execute the following commands: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183452090-1ce77394-a980-403f-a477-42ce6d551c42.png) <br/>
@@ -305,23 +295,23 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
   ![image](https://user-images.githubusercontent.com/57360760/183452439-18d2b90b-3d64-443c-87b2-7c851169197c.png) <br/>
   - Setup slack <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183452242-896bd805-ac8a-494e-843a-3724ddea298e.png)
+ 
 - Both are met, the clock tree synthesis doesn't have any violationsb (but for the typicla corner, does not support the multicorner optimization ❓)
-
 
 
 - Let's try to modify the `CTS_CLK_BUFFER_LIST` and remove the `sky130_fd_sc_hd__clkbuf_1` buffer <br/>
 ![image](https://user-images.githubusercontent.com/57360760/183454743-41da9f9b-58c7-4f37-bdd6-b4846ce789b8.png)
  <br/>
- - We `run_cts`, but we have to forcefully stop it, since it stuck ❓!!!
+- We `run_cts`, but we have to forcefully stop it, since it stuck ❓!!!
  
  
- - We need to do the following: <br/>
+- We need to do the following: <br/>
   ![image](https://user-images.githubusercontent.com/57360760/183457820-cd7e3e2a-08e3-4bd9-bc6f-56f681f9abfc.png) <br/>
   ![image](https://user-images.githubusercontent.com/57360760/183458124-dcaff153-f43e-4528-9902-78007430930c.png) <br/>
   ![image](https://user-images.githubusercontent.com/57360760/183458294-c0820820-e410-4204-9aa0-2b28a3e8ea58.png)
 
  
- - Next, we execute the same commands as before: <br/>
+- Next, we execute the same commands as before: <br/>
   ![image](https://user-images.githubusercontent.com/57360760/183459712-9481ba5f-854d-4714-962b-c01850e1c623.png)
 - Hold slack <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183459883-016db9fb-4966-4bef-bd49-8e87d0e9a857.png)
@@ -333,7 +323,7 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
 
 - Next step will be **routing** and post-routing STA. 
 
-## Day 5 Final steps for RTL2GDS using tritonRoute and openSTA
+## Day 5. Final steps for RTL2GDS using tritonRoute and openSTA
 
 Timing verification: Static Timing Analysis (STA) ensures that all timing constraints are met, and that the circuit runs at the designated clock frequency.
 - ❗ He ran `gen_pdn` for power distribution of power and ground. But we included in the new set of commands.
