@@ -130,7 +130,7 @@ The timing characterization, in turn, includes timing treshold, propagation dela
 
 
 ## Day 4. Pre-layout timing analysis and importance of good clock tree
-- A LEF file is used by the routing tool in PnR design to get the location of standard cells pins and route them properly. It is the abstract layout form of a standard cell. Therefore, we will extract a `.lef` file out of the magic `.mag` file and then plug it into the picorv32a flow. <br/>
+- A LEF file is used by the routing tool in PnR design to get the location of standard cells pins and route them properly. It is the abstract layout form of a standard cell. Therefore, we will extract a `.lef` file out of the magic inverter `.mag` file and then plug it into the picorv32a flow. <br/>
 
 - First, we need to make sure that several pre-conditions about the standard cell layout are met. (1) If we open the invertor magic file, we have to make sure the I/O of the invertor (i.e., A and Y) are on the intersection between the horizontal and vertical tracks of layer `lit1`. (2) The width of the standard cell should be in the odd multiples of the x-pitch (0.46 um). The same should hold true for the hight of the standard cell. <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183309011-624c46f0-3d17-4faa-ab9b-c4a78d277c09.png) <br/>
