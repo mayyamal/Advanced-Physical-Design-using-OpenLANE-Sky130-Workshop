@@ -342,6 +342,8 @@ Timing verification: Static Timing Analysis (STA) ensures that all timing constr
 
 - Finally we do the routing with `run_routing`. The routing engine used is TritonRoute. <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183473660-e4af1c24-bffa-41c8-a2fe-41af8d1615a9.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183475397-daed2ff2-d838-461f-943c-277cadbf4ee1.png)
+
 
 
 - 
