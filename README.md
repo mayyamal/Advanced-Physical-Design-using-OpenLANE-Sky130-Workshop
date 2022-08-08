@@ -188,7 +188,16 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
 
 
 
-
+- Then we `run_floorplan`. Since this command produced an error, I ran the following separate commands which gave an error-free flow: <br/>
+ `init_floorplan
+ place_io
+ global_placement_or
+ detailed_placement
+ tap_decap_or
+ detailed_placement
+ gen_pdn
+ run_routing` <br/>
+ 
 
  
 
