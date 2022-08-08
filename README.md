@@ -264,9 +264,19 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
  detailed_placement <br/>
  tap_decap_or <br/>
  detailed_placement <br/>
- gen_pdnq` <br/>
+ gen_pdn` <br/>
  
- - Clock Tree Synthesis
+ - After  `global_placement_or` <br/>
+  ![image](https://user-images.githubusercontent.com/57360760/183433520-b0117610-4a8d-401e-a4c3-0739122af748.png)
+- After first `detailed_placement` <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183433647-68dab09f-45b4-446a-96dd-b5d2f679af76.png)
+
+- After second `detailed_placement` <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183433808-f997e2de-18d1-49ad-ab77-fa9f43189894.png)
+
+
+ - Since the Clock Tree has been formed ❓ MM check with which of the above commands, the next step is to do the timing analysis
+ - 
  - 
  
 
