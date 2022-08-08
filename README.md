@@ -217,10 +217,11 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
 - Timing analysis <br/>
 - In `<path_to>/openlane` I created the `pre_sta.conf` file, on which the pre-layout static timing analysis is based. <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183381744-29db9afb-f359-433b-93b1-4ebd157d827c.png)
-- After running `sta pre_sta.conf` from the  `openlane` directory, I got the following results: <br/>
+- After running `sta pre_sta.conf` from the  `openlane` directory, I got the following setup violations, which are same as in the last synthesis step before: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183382349-ee51baf3-e8a2-44c3-893a-63abbe00a702.png)
 
 
+- In order to lower the delay, we will try to optimize the fanout values of some cells `set ::env(SYNTH_MAX_FANOUT) 4` ❓
 
 
 
