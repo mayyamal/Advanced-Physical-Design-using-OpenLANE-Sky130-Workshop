@@ -285,7 +285,8 @@ The timing characterization, in turn, includes timing treshold, propagation dela
  ![image](https://user-images.githubusercontent.com/57360760/183459883-016db9fb-4966-4bef-bd49-8e87d0e9a857.png) <br/>
 - The value of setup slack is: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183459978-33bf6e4b-948b-48f5-ad2e-09887a1990c8.png) <br/>
-- Both hold and setup slacks have improved, on the expense of the area.
+ 
+- Both hold and setup slacks have improved, on the expense of the area. The setup slac improved from `4.1607` to `4.2278`, while the hold slack improved from `0.1049` to `0.3160`.
 
 - Next steps will be **routing** and post-routing STA. 
 
@@ -296,10 +297,7 @@ The timing characterization, in turn, includes timing treshold, propagation dela
 - We can see the `pdn.def` created before: <br/>
 ![image](https://user-images.githubusercontent.com/57360760/183470708-c7c547ab-f57c-44d1-afec-741d807e7337.png)
 
-- Finally we do the routing with `run_routing`. The routing engine used is TritonRoute. <br/> 
- ![image](https://user-images.githubusercontent.com/57360760/183476372-df90ef04-1323-4c1e-8f31-0b876146b858.png)
- 
-- Since we used the default `ROUTING_STRATEGY` (i.e., TritonRoute = 0), the routing finished with 5 violation (in 64 optimization runs). In case we chose `TritonRoute = 14`, the number of violations would have been zero, on the expense of a very time consuming routing process and memory utilization. <br/>
+- Finally we do the routing with `run_routing`. The routing engine used is TritonRoute. Since we used the default `ROUTING_STRATEGY` (i.e., TritonRoute = 0), the routing finished with 5 violation (in 64 optimization runs). In case we chose `TritonRoute = 14`, the number of violations would have been zero, on the expense of a very time consuming routing process and memory utilization. <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183479946-c7ab5256-eaf0-4164-8288-c1911a52b855.png) <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183479607-b1eff7e7-212b-4a66-ba7d-9fb6f16240ad.png) <br/>
 
