@@ -158,39 +158,39 @@ The timing characterization, in turn, includes timing treshold, propagation dela
 - and include the additional `.lef` into the flow: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183313045-20960796-72e4-4ec0-9042-dab2e23eef70.png) <br/>
  
-- After `run_synthesis` we can see the new cells (i.e., sky130): <br/>
+- After `run_synthesis` we can see the new cells (i.e., `sky130_vsdinv`): <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183313229-19bb9c27-35cc-43f0-9b25-f7e7570fbb79.png) <br/>
  
- as well as a slack violation ❗ <br/>
+ - but we can also notice a slack violation ❗ <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183313291-24df1174-4ce1-4fcd-9cf5-f31972cb3d8f.png) <br/>
  
- - Current values: 
-`Chip area for module '\picorv32a': 147950.646400
- tns -3232.44
- wns -26.53`
+ - Current values: <br/>
+ `Chip area for module '\picorv32a': 147950.646400` <br/>
+ `tns -3232.44` <br/>
+ `wns -26.53` <br/>
  
-- We changed the following switches to try to reduce the slack: <br/>
+- In order to try to reduce the slack, we modified the following switches: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183317231-860f6d37-98f5-44c2-8af5-3314d869aac3.png) <br/>
 
 - The new values after synthesis are (after rmoving/renaming the old `picorv32a.synthesis.v` file): <br/>
- `Chip area for module '\picorv32a': 209179.369600
- tns -266.36
- wns -2.95` <br/>
+ `Chip area for module '\picorv32a': 209179.369600` <br/> 
+ `tns -266.36` <br/>
+ `wns -2.95` <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183317530-531231e7-26d3-4961-ba78-c9ec432e648b.png) <br/>
 
 
 - Then we `run_floorplan`. Since this command produced an error, it was suggested to use the following separate commands which give an error-free flow: <br/>
- `init_floorplan <br/>
- place_io <br/>
- global_placement_or <br/>
- detailed_placement <br/>
- tap_decap_or <br/>
- detailed_placement <br/>
- gen_pdn - Runs basic power grid generation on the processed design using the openroad app.` <br/>
+ `init_floorplan` <br/>
+ `place_io` <br/>
+ `global_placement_or` <br/>
+ `detailed_placement` <br/>
+ `tap_decap_or` <br/>
+ `detailed_placement` <br/>
+ `gen_pdn` - Runs basic power grid generation on the processed design using the openroad app.` <br/>
  
 - After `global_placement_or`: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183318749-f9e34390-4e61-4052-93b1-8a4fda00e1e3.png) <br/>
- ❗ SLack violated, will be fixed later
+ ❗ SLack is still violated, will be fixed later. <br/>
 - After `detailed_placement`: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183318839-9d77b690-7268-4e8a-bfcc-5b6adfd437a5.png) <br/>
 - After the second `detailed_placement`: <br/>
