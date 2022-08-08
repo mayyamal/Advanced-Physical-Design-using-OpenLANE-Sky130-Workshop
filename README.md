@@ -274,17 +274,24 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
 - After second `detailed_placement` <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183433808-f997e2de-18d1-49ad-ab77-fa9f43189894.png)
 
+- Finaly we execute `run_cts` <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183443364-a63db80e-089b-4c0d-9f7b-dc5cbf355e92.png)
 
- - Since the Clock Tree has been formed ❓ MM check with which of the above commands, the next step is to do the timing analysis
- - 
- - 
+
+
+- Since the Clock Tree has been build (❓ MM check with which of the above commands), the next step is to do the timing analysis
+ 
+- We execute `openroad` in the openLANE environment and we will do the timing analysis with openSTA from there. <br/>
+  ![image](https://user-images.githubusercontent.com/57360760/183441953-359c9051-5a19-43a2-827a-8cc7e92ea753.png) <br/>
+  
+
+
+
  
 
- 
 
 
-
-
+openroad
   
 
 ## Day 5 Final steps for RTL2GDS using tritonRoute and openSTA
