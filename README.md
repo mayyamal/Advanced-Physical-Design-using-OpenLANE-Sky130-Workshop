@@ -235,7 +235,11 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
   ![image](https://user-images.githubusercontent.com/57360760/183409416-34c4fd7c-05ae-45b5-ac11-410e653b95b5.png)
 
 - I changed the following: <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183409994-35a8a661-7464-4ee1-843c-4b94eb37423c.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183409994-35a8a661-7464-4ee1-843c-4b94eb37423c.png) <br/>
+ but nothing changed
+ 
+ - After we made these changed in OpenSTA, we should make sure that openLANE will use them: <br/>
+  ![image](https://user-images.githubusercontent.com/57360760/183410981-550d1246-189f-4d53-b8be-0a6d7be0a022.png)
 
  
  - Clock Tree Synthesis
