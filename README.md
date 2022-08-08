@@ -252,7 +252,10 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
  ![image](https://user-images.githubusercontent.com/57360760/183410981-550d1246-189f-4d53-b8be-0a6d7be0a022.png)
 
 - To verify thatr the netlist is modified we will search for the cell `_46875_` and verify it was changed from `dfxtp_2` to `dfxtp_4`: <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183419001-2915d5f6-43e5-4040-b8f6-a33dc3a344cc.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183419001-2915d5f6-43e5-4040-b8f6-a33dc3a344cc.png) <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183430503-65f665a0-e278-4d56-bea9-3b2539bdfc06.png)
+
+
 - Next we do floorplanning and placement using the commands mentioned before: <br/>
  - Then we `run_floorplan`. Since this command produced an error, it was suggested to use the following separate commands which give an error-free flow: <br/>
  `init_floorplan <br/>
