@@ -35,7 +35,7 @@ The goal of openLANE is to produce a clean GDSII layout with no human interventi
  ![image](https://user-images.githubusercontent.com/57360760/182964659-11209850-2bb9-41fe-b9c6-eaf42cb1a9f1.png)
 
  
-- Finally we run the **synthesis** using the `run_synthesis` command. The synthesis (done using **yosys**) converts the picorv32a RTL to a gate-level netlist using the skywater standard cell library. <!--- ![image](https://user-images.githubusercontent.com/57360760/182968222-db42351d-3ffa-430c-a4a2-2638289b1672.png) --->
+- Finally we run the **synthesis** using the `run_synthesis` command. The synthesis (done using **yosys**) converts the picorv32a RTL to a gate-level netlist using the skywater standard cell library. 
 
 - The flip flop ratio in my synthesized design is 10.8% (i.e., 1613/14876), where 1613 is the number of DFFs (`sky130_fd_sc_hd__dfxtp_2`) and 14876 is the total number of cells: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/182966275-228cc155-3c02-423e-81a3-e23858d2a132.png) <br/>
