@@ -221,7 +221,14 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
  ![image](https://user-images.githubusercontent.com/57360760/183382349-ee51baf3-e8a2-44c3-893a-63abbe00a702.png)
 
 
-- In order to lower the delay, we will try to optimize the fanout values of some cells `set ::env(SYNTH_MAX_FANOUT) 4` ❓
+- In order to lower the delay, we will try to optimize the fanout values of some cells `set ::env(SYNTH_MAX_FANOUT) 4` ❓ (it was 6 before, and now it actually increased a bit): <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183389404-4b636273-0564-4091-8309-52cbda33aff8.png)
+
+- The `mux_4` had a very big fanout: <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183389591-44b57557-9b7e-4903-978b-48ff128c290a.png)
+- So I tried to replace it with `mux_2`: <br/>
+ 
+
 
 
 
