@@ -201,7 +201,7 @@ The timing characterization, in turn, includes timing treshold, propagation dela
 - In `<path_to>/openlane` we created the `pre_sta.conf` file, on which the pre-layout static timing analysis is based. <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183381744-29db9afb-f359-433b-93b1-4ebd157d827c.png) <br/>
  
-- After running `sta pre_sta.conf` from the `openlane` flow, the following setup violations are reported (which are same as in the last synthesis step before_: <br/>
+- After running `sta pre_sta.conf` from the `openlane` flow, the following setup violations are reported: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183382349-ee51baf3-e8a2-44c3-893a-63abbe00a702.png) <br/>
 
 
