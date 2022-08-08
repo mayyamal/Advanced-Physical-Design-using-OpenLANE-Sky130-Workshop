@@ -1,9 +1,9 @@
-# Advanced-Physical-Design-using-OpenLANE-Sky130-Workshop
+Advanced-Physical-Design-using-OpenLANE-Sky130-Workshop
 
 
 <!-- toc -->
 
-## RANDOM 
+# RANDOM 
 
 `prep -design picorv32a -tag <tag name of the run>` - if you want the results from the last run, or <br/>
 `prep -design picorv32a -tag <tag name of the run> -overwritre` - to overwrite the last configuration with the new values in the `config.tcl` file.
@@ -13,7 +13,7 @@ OpenLANE is based on several open-source projects: openROAD, Yosys, ABC, KLayout
 
 Fully automated open-source end-to-end ASIC design flow
 
-## Day 1 Inception of open-source EDA, openLANE and SkyWater 130
+# Day 1 Inception of open-source EDA, openLANE and SkyWater 130
 
 - From `‌/Desktop/work/tools/openlane_working_dir/openlane` we should start docker and execute the following commands:
  ![image](https://user-images.githubusercontent.com/57360760/182897041-3674f729-4e5d-4a5b-8b61-57ae81fab4ce.png)
