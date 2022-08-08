@@ -165,13 +165,13 @@ The timing characterization, in turn, includes timing treshold, propagation dela
  wns -26.53`
  
 - We changed the following switches to try to reduce the slack: <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183317231-860f6d37-98f5-44c2-8af5-3314d869aac3.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183317231-860f6d37-98f5-44c2-8af5-3314d869aac3.png) <br/>
 
 - The new values after synthesis are (after rmoving/renaming the old `picorv32a.synthesis.v` file): <br/>
  `Chip area for module '\picorv32a': 209179.369600
  tns -266.36
  wns -2.95` <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183317530-531231e7-26d3-4961-ba78-c9ec432e648b.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183317530-531231e7-26d3-4961-ba78-c9ec432e648b.png) <br/>
 
 
 
@@ -185,28 +185,28 @@ The timing characterization, in turn, includes timing treshold, propagation dela
  gen_pdn - Runs basic power grid generation on the processed design using the openroad app.` <br/>
  
 - After `global_placement_or`: <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183318749-f9e34390-4e61-4052-93b1-8a4fda00e1e3.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183318749-f9e34390-4e61-4052-93b1-8a4fda00e1e3.png) <br/>
  ❗ SLack violated, will be fixed later
 - After `detailed_placement`: <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183318839-9d77b690-7268-4e8a-bfcc-5b6adfd437a5.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183318839-9d77b690-7268-4e8a-bfcc-5b6adfd437a5.png) <br/>
 - After the second `detailed_placement`: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183318974-31b4a8d0-48ed-453e-91b1-4393c88b0efd.png)
  
 - To check whether the custom inverter cell is added to the current flow we invoke `magic` and we search for the `sky130_vsdinv` cell: <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183319703-05713536-3866-430e-8b8b-1f4b6ddcb6c4.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183319703-05713536-3866-430e-8b8b-1f4b6ddcb6c4.png) <br/>
 
 - Timing analysis <br/>
 - In `<path_to>/openlane` I created the `pre_sta.conf` file, on which the pre-layout static timing analysis is based. <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183381744-29db9afb-f359-433b-93b1-4ebd157d827c.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183381744-29db9afb-f359-433b-93b1-4ebd157d827c.png) <br/>
 - After running `sta pre_sta.conf` from the  `openlane` directory, I got the following setup violations, which are same as in the last synthesis step before: <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183382349-ee51baf3-e8a2-44c3-893a-63abbe00a702.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183382349-ee51baf3-e8a2-44c3-893a-63abbe00a702.png) <br/>
 
 
 - In order to lower the delay, we will try to optimize the fanout values of some cells `set ::env(SYNTH_MAX_FANOUT) 4` ❓ (it was 6 before, and now it actually increased a bit): <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183389404-4b636273-0564-4091-8309-52cbda33aff8.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183389404-4b636273-0564-4091-8309-52cbda33aff8.png) <br/>
 
 - The cell `_46535_` had a very big fanout: <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183408431-fbeb3ff4-7ef8-4516-a21a-4c88a352936f.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183408431-fbeb3ff4-7ef8-4516-a21a-4c88a352936f.png) <br/>
  
   Or in the ~=2.9 slack`_42923_` : <br/> 
  ![image](https://user-images.githubusercontent.com/57360760/183428967-a23549eb-e010-43a2-8d34-0b8c1befbd4a.png) <br/>
