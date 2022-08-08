@@ -191,8 +191,6 @@ The timing characterization, in turn, includes timing treshold, propagation dela
 - After `global_placement_or`: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183318749-f9e34390-4e61-4052-93b1-8a4fda00e1e3.png) <br/>
  
- - After `detailed_placement`: <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183318839-9d77b690-7268-4e8a-bfcc-5b6adfd437a5.png) <br/>
 - After the second `detailed_placement`: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183318974-31b4a8d0-48ed-453e-91b1-4393c88b0efd.png)
  
@@ -235,11 +233,11 @@ The timing characterization, in turn, includes timing treshold, propagation dela
 
 - To verify thatr the netlist is modified we will search for the cell `_46875_` and verify it was changed from `dfxtp_2` to `dfxtp_4`: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183419001-2915d5f6-43e5-4040-b8f6-a33dc3a344cc.png) <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183430503-65f665a0-e278-4d56-bea9-3b2539bdfc06.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183430503-65f665a0-e278-4d56-bea9-3b2539bdfc06.png) <br/>
 
 
 - Next we do floorplanning and placement using the commands mentioned before: <br/>
- - Then we `run_floorplan`. Since this command produced an error, it was suggested to use the following separate commands which give an error-free flow: <br/>
+- Then we `run_floorplan`. Since this command produced an error, it was suggested to use the following separate commands which give an error-free flow: <br/>
  `init_floorplan` <br/>
  `place_io` <br/>
  `global_placement_or` <br/>
@@ -249,22 +247,20 @@ The timing characterization, in turn, includes timing treshold, propagation dela
  `gen_pdn` <br/>
  
 - After  `global_placement_or` <br/>
-  ![image](https://user-images.githubusercontent.com/57360760/183433520-b0117610-4a8d-401e-a4c3-0739122af748.png)
-- After first `detailed_placement` <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183433647-68dab09f-45b4-446a-96dd-b5d2f679af76.png)
+  ![image](https://user-images.githubusercontent.com/57360760/183433520-b0117610-4a8d-401e-a4c3-0739122af748.png) <br/>
 
-- After second `detailed_placement` <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183433808-f997e2de-18d1-49ad-ab77-fa9f43189894.png)
+- After the second `detailed_placement` <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183433808-f997e2de-18d1-49ad-ab77-fa9f43189894.png) <br/>
 
 - Finaly we run the clock tree synthesis `run_cts` <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183443364-a63db80e-089b-4c0d-9f7b-dc5cbf355e92.png) <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183443900-a2ac1480-773f-4053-882b-af9f57ab8367.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183443900-a2ac1480-773f-4053-882b-af9f57ab8367.png) <br/>
 
 
 - The next step is to do the post-cts timing analysis.
  
 - We execute `openroad` in the openLANE environment and we will do the timing analysis with openSTA from there.  We read the `lef` and `def` files and create the `db` file <br/>
-![image](https://user-images.githubusercontent.com/57360760/183445328-26d049b5-7e3f-4685-ad08-24e95e78da4f.png)
+![image](https://user-images.githubusercontent.com/57360760/183445328-26d049b5-7e3f-4685-ad08-24e95e78da4f.png) <br/>
 
   
 - Next we execute the command which were previosuly loaded from `pre_sta.conf` <br/>
