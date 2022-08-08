@@ -340,5 +340,11 @@ Timing verification: Static Timing Analysis (STA) ensures that all timing constr
 - We can see the `pdn.def` created before <br/>
 ![image](https://user-images.githubusercontent.com/57360760/183470708-c7c547ab-f57c-44d1-afec-741d807e7337.png)
 
+- Finally we do the routing with `run_routing`. The routing engine used is TritonRoute. <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183473660-e4af1c24-bffa-41c8-a2fe-41af8d1615a9.png)
+
+
+- 
+
 - 
 
