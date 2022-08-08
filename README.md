@@ -290,7 +290,14 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
   
 - Next we execute the command which were previosuly loaded from `pre_sta.conf` <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183449034-c0e5e03f-0761-4f51-a777-a2aa6923dd4c.png) <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183449248-7ae39b8b-a0e7-426e-ad1a-cd568cb32b2f.png)
+- Hold slack <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183449630-948bb7e8-57c2-401f-a221-8d3d2d26c956.png) <br/>
+- Setup slack <br/> 
+ ![image](https://user-images.githubusercontent.com/57360760/183449248-7ae39b8b-a0e7-426e-ad1a-cd568cb32b2f.png) <br/>
+ 
+- The slacks must be corrected. But this analysis is not correct ❓ why
+
+- 
 
 
 
