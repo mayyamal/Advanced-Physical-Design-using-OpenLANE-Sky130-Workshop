@@ -93,22 +93,23 @@ The goal of [openLANE](https://github.com/The-OpenROAD-Project/OpenLane) is to p
 - We first copy the `sky130A.tech` file into the cloned repo. This file gives all the information about the SkyWater sky130 fabrication process: <br/> 
  ![image](https://user-images.githubusercontent.com/57360760/183284463-c8867b74-6886-4a6d-bfbc-89cf1864dfcb.png)
  
-- We can see the layout of the invertor: <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183284512-ecf1438b-4200-4614-8fdd-e160ca58c4a8.png)
+- We can see the layout of the invertor using **magic**: <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183284512-ecf1438b-4200-4614-8fdd-e160ca58c4a8.png) <br/>
  
 - To extract it to SPICE we use the following commands in `tkcon` 
  ![image](https://user-images.githubusercontent.com/57360760/183287349-5bd3c5ac-3a22-44b0-ab29-3cb1d9aa4859.png) <br/>
-- This is what the spice file currently looks like: <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183287424-1229b84f-f661-4ca9-aa67-71a9f68651f5.png) 
+ 
+- The spice file currently looks like this: <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183287424-1229b84f-f661-4ca9-aa67-71a9f68651f5.png) <br/> 
  
 - This is his file: <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183287453-374e8543-51a9-4abb-a038-d0ad369d1600.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183287453-374e8543-51a9-4abb-a038-d0ad369d1600.png) <br/>
  
 - After defining the extra connections (i.e., `Vdd, Vss, Va`, the file looks like this: <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183288904-c6229596-ac81-4bd9-80de-c733645c2845.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183288904-c6229596-ac81-4bd9-80de-c733645c2845.png) <br/>
 
 - When we pass this file in `ngspice` we get the folloeing output: <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183288698-e6f17611-2f0a-439f-8b5b-1101c723531a.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183288698-e6f17611-2f0a-439f-8b5b-1101c723531a.png) <br/>
 - The plot: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183288981-74a6e549-c74b-4718-8ae0-7cfeb46053d1.png)
  
