@@ -8,7 +8,7 @@
 - [Day 5. Final steps for RTL2GDS using tritonRoute and openST](#day-5-final-steps-for-rtl2gds-using-tritonroute-and-openst)
 
 
-The goal of openLANE is to produce a clean GDSII layout with no human intervention. It is a fully automated open-source end-to-end ASIC design. 
+The goal of openLANE is to produce a clean GDSII layout with no human intervention. It is a fully automated open-source end-to-end ASIC design flow. 
 
 
 ## Day 1. Inception of open-source EDA, openLANE and SkyWater 130
