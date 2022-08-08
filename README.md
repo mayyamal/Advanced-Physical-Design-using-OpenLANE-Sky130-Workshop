@@ -102,7 +102,7 @@ The goal of [openLANE](https://github.com/The-OpenROAD-Project/OpenLane) is to p
 - This is the content of the newly created `sky130_inv.spice`: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183287424-1229b84f-f661-4ca9-aa67-71a9f68651f5.png) <br/> 
  
-- After defining the extra connections (i.e., `Vdd, Vss, Va`), the file looks like this: <br/>
+- After defining the extra connections (i.e., `Vdd, Vss, Va`) and changing some parameters, the file looks like this: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183288904-c6229596-ac81-4bd9-80de-c733645c2845.png) <br/>
 
 - When we pass this file in `ngspice` we get the folloeing output: <br/>
