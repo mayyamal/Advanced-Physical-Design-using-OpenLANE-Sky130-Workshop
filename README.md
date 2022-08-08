@@ -238,9 +238,20 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
  ![image](https://user-images.githubusercontent.com/57360760/183409994-35a8a661-7464-4ee1-843c-4b94eb37423c.png) <br/>
  but nothing changed
  
- - After we made these changed in OpenSTA, we should make sure that openLANE will use them: <br/>
-  ![image](https://user-images.githubusercontent.com/57360760/183410981-550d1246-189f-4d53-b8be-0a6d7be0a022.png)
+- After we made these changed in OpenSTA, we should make sure that openLANE will use them: <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183410981-550d1246-189f-4d53-b8be-0a6d7be0a022.png)
 
+- To verify thatr the netlist is modified we will search for the cell `_46875_` and verify it was changed from `dfxtp_2` to `dfxtp_4`: <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183419001-2915d5f6-43e5-4040-b8f6-a33dc3a344cc.png)
+- Next we do floorplanning and placement using the commands mentioned before: <br/>
+ - Then we `run_floorplan`. Since this command produced an error, it was suggested to use the following separate commands which give an error-free flow: <br/>
+ `init_floorplan <br/>
+ place_io <br/>
+ global_placement_or <br/>
+ detailed_placement <br/>
+ tap_decap_or <br/>
+ detailed_placement <br/>
+ gen_pdnq` <br/>
  
  - Clock Tree Synthesis
  - 
