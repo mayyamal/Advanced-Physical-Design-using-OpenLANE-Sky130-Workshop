@@ -275,7 +275,10 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
  ![image](https://user-images.githubusercontent.com/57360760/183433808-f997e2de-18d1-49ad-ab77-fa9f43189894.png)
 
 - Finaly we execute `run_cts` <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183443364-a63db80e-089b-4c0d-9f7b-dc5cbf355e92.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183443364-a63db80e-089b-4c0d-9f7b-dc5cbf355e92.png) <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183443900-a2ac1480-773f-4053-882b-af9f57ab8367.png)
+
+
 
 
 
