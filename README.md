@@ -211,7 +211,8 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
  ![image](https://user-images.githubusercontent.com/57360760/183318974-31b4a8d0-48ed-453e-91b1-4393c88b0efd.png)
  
 - To check whether the custom inverter cell is added to the current flow we invoke `magic` and we search for the `sky130_vsdinv` cell: <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183319583-98aa739c-3e1c-4baf-a8fa-baf6528e3400.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183319703-05713536-3866-430e-8b8b-1f4b6ddcb6c4.png)
+
 
   
 
