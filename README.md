@@ -297,7 +297,10 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
  
 - The slacks must be corrected. But this analysis is not correct ❓ why
 
-- 
+- We execute the following commands: <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183451841-9d7c5a49-0a5a-4f39-a963-48be5d8fc6ca.png)
+
+
 
 
 
