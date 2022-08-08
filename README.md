@@ -218,25 +218,13 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
 - In `<path_to>/openlane` I created the `pre_sta.conf` file, on which the pre-layout static timing analysis is based. <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183381744-29db9afb-f359-433b-93b1-4ebd157d827c.png)
 - After running `sta pre_sta.conf` from the  `openlane` directory, I got the following results: <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183382042-0c9d2917-aabe-4c67-833b-a83c9b3dadca.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183382349-ee51baf3-e8a2-44c3-893a-63abbe00a702.png)
+
 
 
 
 
   
-
-
- 
-
-
- 
-
- 
-
-
-
- 
-
 
 ## Day 5 Final steps for RTL2GDS using tritonRoute and openSTA
 
