@@ -1,11 +1,11 @@
 # Advanced-Physical-Design-using-OpenLANE-Sky130-Workshop
 
 
-- [Day 1. Inception of open-source EDA, openLANE and SkyWater 130\](#day-1-inception-of-open-source-eda--openlane-and-skywater-130-)
+- [Day 1. Inception of open-source EDA, openLANE and SkyWater 130](#day-1-inception-of-open-source-eda--openlane-and-skywater-130)
 - [Day 2. Good floorplan vs bad floorplan and introduction to library cells](#day-2-good-floorplan-vs-bad-floorplan-and-introduction-to-library-cells)
 - [Day 3. Design library cell using Magic Layout and ngspice characterization](#day-3-design-library-cell-using-magic-layout-and-ngspice-characterization)
 - [Day 4. Pre-layout timing analysis and importance of good clock tree](#day-4-pre-layout-timing-analysis-and-importance-of-good-clock-tree)
-- [Day 5. Final steps for RTL2GDS using tritonRoute and openSTA](#day-5-final-steps-for-rtl2gds-using-tritonroute-and-opensta)
+- [Day 5. Final steps for RTL2GDS using tritonRoute and openST](#day-5-final-steps-for-rtl2gds-using-tritonroute-and-openst)
 
 
 The goal of openLANE is to produce a clean GDSII layout with no human intervention. It is a fully automated open-source end-to-end ASIC design. 
