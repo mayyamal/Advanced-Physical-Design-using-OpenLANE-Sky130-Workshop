@@ -232,6 +232,8 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
  ![image](https://user-images.githubusercontent.com/57360760/183400592-d02b7f35-d265-4028-a889-b4a985c4ef2c.png) <br/>
  However, nothing improved
  
+ `report_checks -fileds {net cap slew input_pin} -digits 4`
+ 
  - Clock Tree Synthesis
  - 
  
