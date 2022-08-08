@@ -105,30 +105,32 @@ The goal of [openLANE](https://github.com/The-OpenROAD-Project/OpenLane) is to p
 - After defining the extra connections (i.e., `Vdd, Vss, Va`) and changing some parameters, the file looks like this: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183288904-c6229596-ac81-4bd9-80de-c733645c2845.png) <br/>
 
-- When we pass this file in `ngspice` we get the folloeing output: <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183288698-e6f17611-2f0a-439f-8b5b-1101c723531a.png) <br/>
-- The plot: <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183288981-74a6e549-c74b-4718-8ae0-7cfeb46053d1.png)
+- When we pass this file in `ngspice`, we get the following output: <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183288698-e6f17611-2f0a-439f-8b5b-1101c723531a.png) <br/> 
  
-- Library characterization of the inverter
-- Next we should calculate the rise transition (20% to 80%), which appx. is `2.20-2.16 = 0.04 ns` <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183289312-c5548271-3d18-442d-be73-15f442b1c0ee.png)
+- The plot of the inverter look like this: <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183288981-74a6e549-c74b-4718-8ae0-7cfeb46053d1.png)  <br/> 
+ 
+- Next, we will do a library characterization of the inverter. Characterization is the last step and gives the timing, noise, power information.
+The timing characterization, in turn, includes timing treshold, propagation delay, and transition time.
 
-- Similarly, the fall transition (80% to 20%) is appx. `2.12 - 2.17 = 0.05` <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183289454-f744dffa-5962-4166-abab-e96f99e86854.png)
+- The rise transition time (20% to 80%) is approx. `2.20-2.16 = 0.04 ns` <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183289312-c5548271-3d18-442d-be73-15f442b1c0ee.png)  <br/> 
 
-- The cell propagation delay (cell rise delay) is appx.  `2.18 - 2.15 = 0.03` <br/>
+- Similarly, the fall transition time (80% to 20%) is approx. `2.12 - 2.17 = 0.05 ns` <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183289454-f744dffa-5962-4166-abab-e96f99e86854.png)  <br/> 
+
+- The cell propagation delay (cell rise delay) is approx. `2.18 - 2.15 = 0.03 ns` <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183289577-08c324d7-3d65-4cfc-8927-dc7e0d25e22c.png) <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183289595-2338f2a1-0884-4852-8ed3-260769530292.png) <br/>
 
-- The cell fall delay is appx. `4.05 - 4.04 = 0.01` <br/>
+- The cell propagation delay (cell fall delay) is approx. `4.05 - 4.04 = 0.01 ns` <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183289735-52bc2165-17b0-41dd-92a9-3bac0d1c86d5.png) <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183289759-2da4da63-5abd-43b2-b5f3-ad89b8b6ec20.png) <br/>
 
 
-
 ## Day 4. Pre-layout timing analysis and importance of good clock tree
-- The first step will be to extract a `lef` file out of the magic `.mag` file <br/> and then plug that file into the picorv32a flow.
+- The first step will be to extract a `lef` file out of the magic `.mag` file <br/> and then plug that file into the picorv32a flow. A LEF file is used by the router tool in PnR design to get the location of standard cells pins to route them properly. So it is basically the abstract form of layout of a standard cell.
 
 - First we need to make sure that several pconditions about the standard cell layout are met:
 - (1) If we open the invertor magic file, we have to make sure the I/O of the invertor (i.e., A and Y) are on the intersection between the horizontal and vertical tracks of layer `lit1` <br/>
