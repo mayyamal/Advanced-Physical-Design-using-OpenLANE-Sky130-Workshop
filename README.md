@@ -195,13 +195,13 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
 
 
 - Then we `run_floorplan`. Since this command produced an error, it was suggested to use the following separate commands which give an error-free flow: <br/>
- `init_floorplan
- place_io
- global_placement_or
- detailed_placement
- tap_decap_or
- detailed_placement
- gen_pdn` <br/>
+ `init_floorplan <br/>
+ place_io <br/>
+ global_placement_or <br/>
+ detailed_placement <br/>
+ tap_decap_or <br/>
+ detailed_placement <br/>
+ gen_pdn - Runs basic power grid generation on the processed design using the openroad app.` <br/>
  
 - After `global_placement_or`: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183318749-f9e34390-4e61-4052-93b1-8a4fda00e1e3.png)
@@ -215,7 +215,13 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
  ![image](https://user-images.githubusercontent.com/57360760/183319703-05713536-3866-430e-8b8b-1f4b6ddcb6c4.png)
 
 - Timing analysis <br/>
-- 
+- In `<path_to>/openlane` I created the `pre_sta.conf` file, on which the pre-layout static timing analysis is based. <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183381744-29db9afb-f359-433b-93b1-4ebd157d827c.png)
+- After running `sta pre_sta.conf` from the  `openlane` directory, I got the following results: <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183382042-0c9d2917-aabe-4c67-833b-a83c9b3dadca.png)
+
+
+
 
   
 
