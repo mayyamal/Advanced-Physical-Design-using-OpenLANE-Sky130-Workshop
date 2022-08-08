@@ -234,6 +234,9 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
  - The slack improved a bit: >br/>
   ![image](https://user-images.githubusercontent.com/57360760/183409416-34c4fd7c-05ae-45b5-ac11-410e653b95b5.png)
 
+- I changed the following: <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183409994-35a8a661-7464-4ee1-843c-4b94eb37423c.png)
+
  
  - Clock Tree Synthesis
  - 
