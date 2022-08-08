@@ -197,7 +197,7 @@ The timing characterization, in turn, includes timing treshold, propagation dela
 - To check whether the custom inverter cell is added to the current flow, we invoke `magic` and search for the `sky130_vsdinv` cell: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183319703-05713536-3866-430e-8b8b-1f4b6ddcb6c4.png) <br/>
 
-- Next we will perform **pre-layout static timing analysis**. <br/>
+- Next we will perform **pre-layout static timing analysis (STA)**. STA ensures that all timing constraints are met, and that the circuit runs at the designated clock frequency. <br/>
 - In `<path_to>/openlane` we created the `pre_sta.conf` file, on which the pre-layout static timing analysis is based. <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183381744-29db9afb-f359-433b-93b1-4ebd157d827c.png) <br/>
  
@@ -222,11 +222,8 @@ The timing characterization, in turn, includes timing treshold, propagation dela
 
 
 - After we made these changed in OpenSTA, we should make sure that openLANE will use them: <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183410981-550d1246-189f-4d53-b8be-0a6d7be0a022.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183511284-e12148dd-159f-4e43-a6cd-3f347e1ec025.png) <br/>
 
-- To verify thatr the netlist is modified we will search for the cell `_42923_` and verify it was changed from `dfxtp_2` to `dfxtp_4`: <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183419001-2915d5f6-43e5-4040-b8f6-a33dc3a344cc.png) <br/>
- 
 
 - Next we do floorplanning and placement using the commands mentioned before: <br/>
  `init_floorplan` <br/>
@@ -237,10 +234,10 @@ The timing characterization, in turn, includes timing treshold, propagation dela
  `detailed_placement` <br/>
  `gen_pdn` <br/>
  
-- After  `global_placement_or` <br/>
+- After `global_placement_or`:  <br/>
   ![image](https://user-images.githubusercontent.com/57360760/183433520-b0117610-4a8d-401e-a4c3-0739122af748.png) <br/>
 
-- After the second `detailed_placement` <br/>
+- After the second `detailed_placement`: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183433808-f997e2de-18d1-49ad-ab77-fa9f43189894.png) <br/>
 
 - Finaly we run the clock tree synthesis `run_cts` <br/>
@@ -250,49 +247,46 @@ The timing characterization, in turn, includes timing treshold, propagation dela
 
 - The next step is to do the post-cts timing analysis.
  
-- We execute `openroad` in the openLANE environment and we will do the timing analysis with openSTA from there.  We read the `lef` and `def` files and create the `db` file <br/>
+- We execute `openroad` in the openLANE environment and we will do the timing analysis with openSTA from there.  We read the `.lef` and `.def` files and create the `.db` file: <br/>
 ![image](https://user-images.githubusercontent.com/57360760/183445328-26d049b5-7e3f-4685-ad08-24e95e78da4f.png) <br/>
 
   
-- Next we execute the command which were previosuly loaded from `pre_sta.conf` <br/>
+- Next we execute the commands which were previosuly loaded from `pre_sta.conf`: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183449034-c0e5e03f-0761-4f51-a777-a2aa6923dd4c.png) <br/>
-- Hold slack <br/>
+- The value of the hold slack is:  <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183449630-948bb7e8-57c2-401f-a221-8d3d2d26c956.png) <br/>
-- Setup slack <br/> 
+- The value of the setup slack is: <br/> 
  ![image](https://user-images.githubusercontent.com/57360760/183449248-7ae39b8b-a0e7-426e-ad1a-cd568cb32b2f.png) <br/>
  
-- The slacks must be corrected. However, this analysis is not correct ❓ why
+- However, this analysis does not give the real numbers for the slack values.
 
-- We execute the following commands: <br/>
+- Therefore, we execute the following commands: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183452090-1ce77394-a980-403f-a477-42ce6d551c42.png) <br/>
   - And this is the output: <br/> 
-  - Hold slack <br/>
+  - The value of the hold slack is: <br/>
   ![image](https://user-images.githubusercontent.com/57360760/183452439-18d2b90b-3d64-443c-87b2-7c851169197c.png) <br/>
-  - Setup slack <br/>
+  - The value of the setup slack is: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183452242-896bd805-ac8a-494e-843a-3724ddea298e.png)
  
-- Both are met, the clock tree synthesis doesn't have any violationsb (but for the typicla corner, does not support the multicorner optimization ❓)
+- Both slacks are met, the clock tree synthesis doesn't have any violations.
 
 
 - Let's try to modify the `CTS_CLK_BUFFER_LIST` and remove the `sky130_fd_sc_hd__clkbuf_1` buffer <br/>
 ![image](https://user-images.githubusercontent.com/57360760/183454743-41da9f9b-58c7-4f37-bdd6-b4846ce789b8.png)
  <br/>
-- We `run_cts`, but we have to forcefully stop it, since it stuck ❓!!!
- 
+- We `run_cts`, but we have to forcefully stop it, since it is stuck!
  
 - We need to do the following: <br/>
   ![image](https://user-images.githubusercontent.com/57360760/183457820-cd7e3e2a-08e3-4bd9-bc6f-56f681f9abfc.png) <br/>
   ![image](https://user-images.githubusercontent.com/57360760/183458124-dcaff153-f43e-4528-9902-78007430930c.png) <br/>
   ![image](https://user-images.githubusercontent.com/57360760/183458294-c0820820-e410-4204-9aa0-2b28a3e8ea58.png)
 
- 
 - Next, we execute the same commands as before: <br/>
   ![image](https://user-images.githubusercontent.com/57360760/183459712-9481ba5f-854d-4714-962b-c01850e1c623.png)
-- Hold slack <br/>
+- The value of hold slack is: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183459883-016db9fb-4966-4bef-bd49-8e87d0e9a857.png)
-- Setup slack <br/>
+- The value of setup slack is: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183459978-33bf6e4b-948b-48f5-ad2e-09887a1990c8.png)
-
 
 - Both hold and setup slacks have improved, on the expense of the area.
 
@@ -300,7 +294,6 @@ The timing characterization, in turn, includes timing treshold, propagation dela
 
 ## Day 5. Final steps for RTL2GDS using tritonRoute and openSTA
 
-Timing verification: Static Timing Analysis (STA) ensures that all timing constraints are met, and that the circuit runs at the designated clock frequency.
 - ❗ He ran `gen_pdn` for power distribution of power and ground. But we included in the new set of commands.
 - We can see the `pdn.def` created before <br/>
 ![image](https://user-images.githubusercontent.com/57360760/183470708-c7c547ab-f57c-44d1-afec-741d807e7337.png)
