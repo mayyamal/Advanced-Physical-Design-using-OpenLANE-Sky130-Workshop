@@ -88,8 +88,7 @@ The goal of openLANE is to produce a clean GDSII layout with no human interventi
 
 ## Day 3. Design library cell using Magic Layout and ngspice characterization
 
-- SPICE simulation
-- Clone the repo ❗Explain more
+- In this part of the lab, we will use the CMOS inverter standard cell from https://github.com/nickson-jose/vsdstdcelldesign, plug it into the openlane flow, and integrate it into the pivorv32a design. <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183284174-99ed03ee-c8b4-4f02-8149-e262ac81959f.png)
 - We will be doing SPICE extraction and post-layout SPICE simulation. We first copy the `sky130A.tech` file, which gives all the information about the SkyWater sky130 fabrication process <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183284364-3ced8b22-9889-424d-b6bb-fb459d682fe9.png) <br/>
