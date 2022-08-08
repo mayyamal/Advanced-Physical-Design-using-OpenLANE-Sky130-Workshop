@@ -140,26 +140,30 @@ The timing characterization, in turn, includes timing treshold, propagation dela
  ![image](https://user-images.githubusercontent.com/57360760/183309765-ae531cf9-8e20-4647-9659-b4d0d770d61e.png) <br/>
  
 
-- We copy the generated `lef` file to the src folder of the picorv32a design <br/>
+- We copy the generated `.lef` file to the `src` folder of the picorv32a design: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183309887-c04c9a65-0dce-4330-9a39-d9eec0971cfd.png) <br/>
 - We copy the libraries: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183310022-ed216524-1cc3-4c70-b587-5fd45349b094.png) <br/>
-- We modify the `config.tcl` <br/>
+- We modify the `config.tcl`: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183311233-8a7fbb7e-3d41-47a6-a70b-62ff50bad86b.png) <br/>
 
  
-- We prep the design <br/>
+- We prep the design: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183311139-588e08cb-ff0f-4ab0-9a47-18c22732a565.png) <br/>
+ 
+ **Note**: `prep -design picorv32a -tag <tag name of the run>` - if we want the results from the last run, or <br/>
+`prep -design picorv32a -tag <tag name of the run> -overwritre` - to overwrite the last configuration with the new values in the `config.tcl` file.
+ 
+- and include the additional `.lef` into the flow:
  ![image](https://user-images.githubusercontent.com/57360760/183313045-20960796-72e4-4ec0-9042-dab2e23eef70.png) <br/>
+ 
 - After `run_synthesis` we can see the new cell: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183313229-19bb9c27-35cc-43f0-9b25-f7e7570fbb79.png) <br/>
- as well as a slack violation ❓ (is wsn that) <br/>
+ 
+ as well as a slack violation ❗ <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183313291-24df1174-4ce1-4fcd-9cf5-f31972cb3d8f.png) <br/>
  
-- ❗ `prep -design picorv32a -tag <tag name of the run>` - if you want the results from the last run, or <br/>
-`prep -design picorv32a -tag <tag name of the run> -overwritre` - to overwrite the last configuration with the new values in the `config.tcl` file. 
-
-- Current values: 
+ - Current values: 
 `Chip area for module '\picorv32a': 147950.646400
  tns -3232.44
  wns -26.53`
