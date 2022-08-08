@@ -230,9 +230,10 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
 - So I tried to replace ithe following cells <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183409179-3a354e8d-3282-4423-bb63-0582884ea220.png) <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183400592-d02b7f35-d265-4028-a889-b4a985c4ef2c.png) <br/>
- However, nothing improved
  
- `report_checks -fileds {net cap slew input_pin} -digits 4`
+ - The slack improved a bit: >br/>
+  ![image](https://user-images.githubusercontent.com/57360760/183409416-34c4fd7c-05ae-45b5-ac11-410e653b95b5.png)
+
  
  - Clock Tree Synthesis
  - 
