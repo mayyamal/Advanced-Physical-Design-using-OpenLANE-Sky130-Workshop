@@ -58,7 +58,7 @@ The goal of openLANE is to produce a clean GDSII layout with no human interventi
 - The `README` file shows all the variables/switches required at different stages of the desing flow (e.g., `FP_CORE_UTIL` - the core utilization percentage; `FP_ASPECT_RATIO` - the core's aspect ratio (height / width), `FP_IO_HMETAL` - the metal layer on which to place the io pins horizontally `FP_IO_VMETAL` - the metal layer on which to place the io pins vertically).
 - This variables are set with their defaults in the `.tcl` files shown above (this files have the lowest precedence). For the chosen design (e.g., picorv32a), as mentioned in Day 1, the switches are set in the `config.tcl` and `sky130A_sky130_fd_sc_hd_config.tcl` files  in the `/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a` directory. The `sky130A_sky130_fd_sc_hd_config.tcl` has the highest precedence. (❗ Don't forget to prep the design after changing values in the config files, and rerun synthesis and floorplanning).
 
-- The new content of `config.tcl` is: < <br/>
+- The new content of `config.tcl` is: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183245258-06e18032-5007-41f3-9d93-53c10e506bbf.png)
 
 - The new content of `sky130A_sky130_fd_sc_hd_config.tcl` is: <br/>
