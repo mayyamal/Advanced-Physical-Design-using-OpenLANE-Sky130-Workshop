@@ -1,5 +1,8 @@
 # Advanced-Physical-Design-using-OpenLANE-Sky130-Workshop
 
+
+<!-- toc -->
+
 ## RANDOM 
 
 `prep -design picorv32a -tag <tag name of the run>` - if you want the results from the last run, or <br/>
@@ -340,13 +343,18 @@ Timing verification: Static Timing Analysis (STA) ensures that all timing constr
 - We can see the `pdn.def` created before <br/>
 ![image](https://user-images.githubusercontent.com/57360760/183470708-c7c547ab-f57c-44d1-afec-741d807e7337.png)
 
-- Finally we do the routing with `run_routing`. The routing engine used is TritonRoute. <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183473660-e4af1c24-bffa-41c8-a2fe-41af8d1615a9.png)
- ![image](https://user-images.githubusercontent.com/57360760/183475397-daed2ff2-d838-461f-943c-277cadbf4ee1.png)
+- Finally we do the routing with `run_routing`. The routing engine used is TritonRoute. <br/> 
+ ![image](https://user-images.githubusercontent.com/57360760/183476372-df90ef04-1323-4c1e-8f31-0b876146b858.png)
+ 
+
+- Since we used the default `ROUTING_STRATEGY`, the routing finished with 5 violation (in 64 optimization runs). In case we chose `TritinRoute = 14`, the number of violations would have been zero, on the expense of a very time consuming routing process and memory utilization. <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183479946-c7ab5256-eaf0-4164-8288-c1911a52b855.png) <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183479607-b1eff7e7-212b-4a66-ba7d-9fb6f16240ad.png)
 
 
+- The violations can be manually modified in `<path_to_run>/reports/routing/tritonRoute.drc` <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183479174-f8715989-a6fb-4737-b6e8-aa551d4b7cac.png)
 
-- 
 
 - 
 
