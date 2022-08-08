@@ -225,7 +225,7 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
  ![image](https://user-images.githubusercontent.com/57360760/183389404-4b636273-0564-4091-8309-52cbda33aff8.png)
 
 - The cell `_46535_` had a very big fanout: <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183400312-ca89a909-cb82-4f3d-af20-187ac9517ca9.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183408431-fbeb3ff4-7ef8-4516-a21a-4c88a352936f.png)
 
 - So I tried to replace it with `mux_4_1`: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183400391-41c41125-69d5-40d7-ab26-df6b74d8b6de.png) <br/>
