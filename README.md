@@ -2,7 +2,8 @@
 
 ## RANDOM 
 
-`prep -design picorv32a -tag <tag name of the run>`
+`prep -design picorv32a -tag <tag name of the run>` - if you want the results from the last run, or <br/>
+`prep -design picorv32a -tag <tag name of the run> -overwritre` - to overwrite the last configuration with the new values in the `config.tcl` file.
 
 The goal of openLANE is to produce a clean GDSII layout with no human intervention. OpenLANE already includes large number of design examples.
 OpenLANE is based on several open-source projects: openROAD, Yosys, ABC, KLayout, Fault, QFlow, Magic.
@@ -328,18 +329,16 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
  ![image](https://user-images.githubusercontent.com/57360760/183459978-33bf6e4b-948b-48f5-ad2e-09887a1990c8.png)
 
 
+- Both hold and setup slacks have improved, on the expense of the area.
 
- 
-
-
-
- 
-
-
-
-
-  
+- Next step will be **routing** and post-routing STA. 
 
 ## Day 5 Final steps for RTL2GDS using tritonRoute and openSTA
 
 Timing verification: Static Timing Analysis (STA) ensures that all timing constraints are met, and that the circuit runs at the designated clock frequency.
+- ❗ He ran `gen_pdn` for power distribution of power and ground. But we included in the new set of commands.
+- We can see the `pdn.def` created before <br/>
+![image](https://user-images.githubusercontent.com/57360760/183470708-c7c547ab-f57c-44d1-afec-741d807e7337.png)
+
+- 
+
