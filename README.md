@@ -151,10 +151,11 @@ The timing characterization, in turn, includes timing treshold, propagation dela
 - We prep the design: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183311139-588e08cb-ff0f-4ab0-9a47-18c22732a565.png) <br/>
  
- **Note**: `prep -design picorv32a -tag <tag name of the run>` - if we want the results from the last run, or <br/>
+ **Note**: <br/>
+`prep -design picorv32a -tag <tag name of the run>` - if we want the results from the last run, or <br/>
 `prep -design picorv32a -tag <tag name of the run> -overwritre` - to overwrite the last configuration with the new values in the `config.tcl` file.
  
-- and include the additional `.lef` into the flow:
+- and include the additional `.lef` into the flow: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183313045-20960796-72e4-4ec0-9042-dab2e23eef70.png) <br/>
  
 - After `run_synthesis` we can see the new cell: <br/>
@@ -176,7 +177,6 @@ The timing characterization, in turn, includes timing treshold, propagation dela
  tns -266.36
  wns -2.95` <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183317530-531231e7-26d3-4961-ba78-c9ec432e648b.png) <br/>
-
 
 
 - Then we `run_floorplan`. Since this command produced an error, it was suggested to use the following separate commands which give an error-free flow: <br/>
