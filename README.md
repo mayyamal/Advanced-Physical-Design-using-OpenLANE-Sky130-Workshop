@@ -226,6 +226,10 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
 
 - The cell `_46535_` had a very big fanout: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183408431-fbeb3ff4-7ef8-4516-a21a-4c88a352936f.png)
+ 
+  Or in the ~=2.9 slack`_42923_` : <br/> 
+ ![image](https://user-images.githubusercontent.com/57360760/183428967-a23549eb-e010-43a2-8d34-0b8c1befbd4a.png)
+
 
 - So I tried to replace ithe following cells <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183409179-3a354e8d-3282-4423-bb63-0582884ea220.png) <br/>
