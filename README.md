@@ -178,25 +178,47 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
  as well as a slack violation ❓ (is wsn that) <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183313291-24df1174-4ce1-4fcd-9cf5-f31972cb3d8f.png)
 
-- To reduce the slack: 
-- Current values: `Chip area for module '\picorv32a': 147950.646400
+- Current values: 
+`Chip area for module '\picorv32a': 147950.646400
  tns -3232.44
  wns -26.53`
  
-- Try with the `SYNTH_STRATEGY`
-![image](https://user-images.githubusercontent.com/57360760/183315166-4d247006-156f-4145-a81e-f0c134627e2b.png)
+- We changed the following switches to try to reduce the slack: <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183317231-860f6d37-98f5-44c2-8af5-3314d869aac3.png)
+
+- The new values after synthesis are (after rmoving/renaming the old `picorv32a.synthesis.v` file): <br/>
+ `Chip area for module '\picorv32a': 209179.369600
+ tns -266.36
+ wns -2.95` <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183317530-531231e7-26d3-4961-ba78-c9ec432e648b.png)
 
 
 
-- Then we `run_floorplan`. Since this command produced an error, I ran the following separate commands which gave an error-free flow: <br/>
+- Then we `run_floorplan`. Since this command produced an error, it was suggested to use the following separate commands which give an error-free flow: <br/>
  `init_floorplan
  place_io
  global_placement_or
  detailed_placement
  tap_decap_or
  detailed_placement
- gen_pdn
- run_routing` <br/>
+ gen_pdn` <br/>
+ 
+- After `global_placement_or`: <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183318749-f9e34390-4e61-4052-93b1-8a4fda00e1e3.png)
+- After `detailed_placement`: <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183318839-9d77b690-7268-4e8a-bfcc-5b6adfd437a5.png)
+- After the second `detailed_placement`: <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183318974-31b4a8d0-48ed-453e-91b1-4393c88b0efd.png)
+ 
+- To check whether the custom inverter cell is added to the current flow we invoke `magic` and we search for the `sky130_vsdinv` cell: <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183319583-98aa739c-3e1c-4baf-a8fa-baf6528e3400.png)
+
+  
+
+
+ 
+
+
  
 
  
