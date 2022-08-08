@@ -282,7 +282,7 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
 
 
 
-- Since the Clock Tree has been build (❓ MM check with which of the above commands), the next step is to do the timing analysis
+- Since the Clock Tree has been build (❓ MM check with which of the above commands), the next step is to do the post-cts timing analysis
  
 - We execute `openroad` in the openLANE environment and we will do the timing analysis with openSTA from there.  We read the `lef` and `def` files and create the `db` file <br/>
 ![image](https://user-images.githubusercontent.com/57360760/183445328-26d049b5-7e3f-4685-ad08-24e95e78da4f.png)
@@ -298,11 +298,21 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
 - The slacks must be corrected. But this analysis is not correct ❓ why
 
 - We execute the following commands: <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183451841-9d7c5a49-0a5a-4f39-a963-48be5d8fc6ca.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183452090-1ce77394-a980-403f-a477-42ce6d551c42.png) <br/>
+  - And this is the output: <br/> 
+  - Hold slack <br/>
+  ![image](https://user-images.githubusercontent.com/57360760/183452439-18d2b90b-3d64-443c-87b2-7c851169197c.png) <br/>
+  - Setup slack <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183452242-896bd805-ac8a-494e-843a-3724ddea298e.png)
+- Both are met, the clock tree synthesis doesn't have any violationsb (but for the typicla corner, does not support the multicorner optimization ❓)
 
 
 
-
+- Let's try to modify the `CTS_CLK_BUFFER_LIST` and remove the `sky130_fd_sc_hd__clkbuf_1` buffer <br/>
+![image](https://user-images.githubusercontent.com/57360760/183454743-41da9f9b-58c7-4f37-bdd6-b4846ce789b8.png)
+ <br/>
+ - We `run_cts` <br/>
+ 
 
 
 
