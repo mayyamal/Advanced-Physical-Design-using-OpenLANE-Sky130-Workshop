@@ -55,27 +55,23 @@ The goal of openLANE is to produce a clean GDSII layout with no human interventi
 - Before running the floorplan, we need to do some congiguration
  ![image](https://user-images.githubusercontent.com/57360760/183244330-a67fe66a-caa5-45e9-b809-0f9f8f2717b0.png)
  
-- The `README` file shows all the variables/switches required at different stages of the desing flow (e.g., `FP_CORE_UTIL` - the core utilization percentage; `FP_ASPECT_RATIO`  - the core's aspect ratio (height / width), `FP_IO_HMETAL`  - the metal layer on which to place the io pins horizontally (top and bottom of the die, default: `4`; `FP_IO_VMETAL`  - the metal layer on which to place the io pins vertically (sides of the die, default: `3`).
--  This variables are set with their defaults in the `.tcl` files in the same directory (this files have the lowest precedence). For the chosen design (e.g., picorv32a), as mentioned in Day 1, they are set in the `config.tcl` and `sky130A_sky130_fd_sc_hd_config.tcl` files  in the `/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a` directory. The `sky130A_sky130_fd_sc_hd_config.tcl` has the highest precedence.
+- The `README` file shows all the variables/switches required at different stages of the desing flow (e.g., `FP_CORE_UTIL` - the core utilization percentage; `FP_ASPECT_RATIO` - the core's aspect ratio (height / width), `FP_IO_HMETAL` - the metal layer on which to place the io pins horizontally `FP_IO_VMETAL` - the metal layer on which to place the io pins vertically).
+- This variables are set with their defaults in the `.tcl` files show above (this files have the lowest precedence). For the chosen design (e.g., picorv32a), as mentioned in Day 1, the switches are set in the `config.tcl` and `sky130A_sky130_fd_sc_hd_config.tcl` files  in the `/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a` directory. The `sky130A_sky130_fd_sc_hd_config.tcl` has the highest precedence. (❗ Don't forget to prep the design after changing values in the config files, and rerun synthesis and floorplanning).
 
-- The new content of `config.tcl` is <br/>
-![image](https://user-images.githubusercontent.com/57360760/183245258-06e18032-5007-41f3-9d93-53c10e506bbf.png)
+- The new content of `config.tcl` is: < <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183245258-06e18032-5007-41f3-9d93-53c10e506bbf.png)
 
-- The new content of `sky130A_sky130_fd_sc_hd_config.tcl` is <br/>
-![image](https://user-images.githubusercontent.com/57360760/183256588-ddfeb0b1-b8f0-469f-8b9f-4adb1e90f16f.png) <br/>
-❗Don't forget to prep the design after changing values in the config files, and rerun synthesis and floorplanning
+- The new content of `sky130A_sky130_fd_sc_hd_config.tcl` is: <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183256588-ddfeb0b1-b8f0-469f-8b9f-4adb1e90f16f.png) <br/>
 
-
-- Since the values in `sky130A_sky130_fd_sc_hd_config.tcl` have higher precedence, the current values of this variables for the current flow,after `run_floorplan`, are: <br/>
+- Since the values in `sky130A_sky130_fd_sc_hd_config.tcl` have higher precedence, the current values of this variables for the current flow, after `run_floorplan`, are: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183257433-5019afdb-9726-4440-a719-37be4f182035.png)
-
 
 - The same values for the current flow can be seen in `<path_to_run>/config.tcl`: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183251745-75dcb57c-5b34-47e4-895b-b8457b294792.png) <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183257495-a7ab1fb9-6f74-4bee-b59c-f1113f6d0320.png)
  
-
-- The area of the chip as specified in `/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/06-08_10-41/results/floorplan/picorv32a.floorplan.def` is 556.4 x 567.12 microns
+- The area of the chip as specified in `/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/06-08_10-41/results/floorplan/picorv32a.floorplan.def` is 556.4 x 567.12 microns.
  ![image](https://user-images.githubusercontent.com/57360760/183257588-fe320fa4-069e-4047-88fe-c9c538bd1db1.png)
 
  
