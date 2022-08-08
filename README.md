@@ -262,7 +262,7 @@ The timing characterization, in turn, includes timing treshold, propagation dela
  
 - However, this analysis does not give the real numbers for the slack values.
 
-- Therefore, we execute the following commands: <br/>
+- Therefore, we execute the following commands, where we load the other liberty file: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183452090-1ce77394-a980-403f-a477-42ce6d551c42.png) <br/>
   - And this is the output: <br/> 
   - The value of the hold slack is: <br/>
