@@ -158,7 +158,7 @@ The timing characterization, in turn, includes timing treshold, propagation dela
 - and include the additional `.lef` into the flow: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183313045-20960796-72e4-4ec0-9042-dab2e23eef70.png) <br/>
  
-- After `run_synthesis` we can see the new cell: <br/>
+- After `run_synthesis` we can see the new cells (i.e., sky130): <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183313229-19bb9c27-35cc-43f0-9b25-f7e7570fbb79.png) <br/>
  
  as well as a slack violation ❗ <br/>
