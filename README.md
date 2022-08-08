@@ -51,8 +51,8 @@ The goal of openLANE is to produce a clean GDSII layout with no human interventi
 
 ## Day 2. Good floorplan vs bad floorplan and introduction to library cells
 
-- The next step after synthesis is **floorplan**. Before running the floorplan, we need to do some congiguration :question: MM- elaborate
-
+- The next step after synthesis is **floorplaning**. It consist of chip floorplanning, macro floorplanning, and power planning.
+- Before running the floorplan, we need to do some congiguration
  ![image](https://user-images.githubusercontent.com/57360760/183244330-a67fe66a-caa5-45e9-b809-0f9f8f2717b0.png)
  
 - The `README` file shows all the variables/switches required at different stages of the desing flow (e.g., `FP_CORE_UTIL` - the core utilization percentage; `FP_ASPECT_RATIO`  - the core's aspect ratio (height / width), `FP_IO_HMETAL`  - the metal layer on which to place the io pins horizontally (top and bottom of the die, default: `4`; `FP_IO_VMETAL`  - the metal layer on which to place the io pins vertically (sides of the die, default: `3`).
