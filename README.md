@@ -200,23 +200,24 @@ The timing characterization, in turn, includes timing treshold, propagation dela
 - Next we will perform **pre-layout static timing analysis**. <br/>
 - In `<path_to>/openlane` we created the `pre_sta.conf` file, on which the pre-layout static timing analysis is based. <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183381744-29db9afb-f359-433b-93b1-4ebd157d827c.png) <br/>
-- After running `sta pre_sta.conf` from the  `openlane` directory, I got the following setup violations, which are same as in the last synthesis step before: <br/>
+ 
+- After running `sta pre_sta.conf` from the `openlane` flow, the following setup violations are reported (which are same as in the last synthesis step before_: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183382349-ee51baf3-e8a2-44c3-893a-63abbe00a702.png) <br/>
 
 
-- In order to lower the delay, we will try to optimize the fanout values of some cells `set ::env(SYNTH_MAX_FANOUT) 4` ❓ (it was 6 before, and now it actually increased a bit): <br/>
+- I tried lowering the `SYNTH_MAX_FANOUT` switch from 6 to 4 (i.e., `set ::env(SYNTH_MAX_FANOUT) 4`), but the slack increased: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183389404-4b636273-0564-4091-8309-52cbda33aff8.png) <br/>
 
-- The cell `_46535_` had a very big fanout: <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183408431-fbeb3ff4-7ef8-4516-a21a-4c88a352936f.png) <br/>
- 
-  Or in the ~=2.9 slack`_42923_` : <br/> 
+- Next, we will try to optimize the fanout values of some cells> . The cell `_42923_` had a very big fanout: <br/> 
  ![image](https://user-images.githubusercontent.com/57360760/183428967-a23549eb-e010-43a2-8d34-0b8c1befbd4a.png) <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183429376-2dfa1db9-2b40-40d6-9ea8-a73ab84e9afa.png) <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183429698-a21bd345-f4d1-4f44-9196-85f2630216e7.png) <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183429943-e10761e8-0353-4aef-997e-4c8badc5d500.png)
 
 
+The cell `_46535_` had a very big fanout: <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183408431-fbeb3ff4-7ef8-4516-a21a-4c88a352936f.png) <br/>
+ 
 - So I tried to replace ithe following cells <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183409179-3a354e8d-3282-4423-bb63-0582884ea220.png) <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183400592-d02b7f35-d265-4028-a889-b4a985c4ef2c.png) <br/>
