@@ -1,31 +1,28 @@
-Advanced-Physical-Design-using-OpenLANE-Sky130-Workshop
+# Advanced-Physical-Design-using-OpenLANE-Sky130-Workshop
 
 
 <!-- toc -->
 
-# RANDOM 
+## RANDOM 
 
 `prep -design picorv32a -tag <tag name of the run>` - if you want the results from the last run, or <br/>
 `prep -design picorv32a -tag <tag name of the run> -overwritre` - to overwrite the last configuration with the new values in the `config.tcl` file.
 
-The goal of openLANE is to produce a clean GDSII layout with no human intervention. OpenLANE already includes large number of design examples.
-OpenLANE is based on several open-source projects: openROAD, Yosys, ABC, KLayout, Fault, QFlow, Magic.
+The goal of openLANE is to produce a clean GDSII layout with no human intervention. It is a fully automated open-source end-to-end ASIC design. 
 
-Fully automated open-source end-to-end ASIC design flow
 
-# Day 1 Inception of open-source EDA, openLANE and SkyWater 130
+## Day 1. Inception of open-source EDA, openLANE and SkyWater 130
 
-- From `‌/Desktop/work/tools/openlane_working_dir/openlane` we should start docker and execute the following commands:
+- From `‌/Desktop/work/tools/openlane_working_dir/openlane` we should start docker and execute the following commands to get into the openLANE environment:
  ![image](https://user-images.githubusercontent.com/57360760/182897041-3674f729-4e5d-4a5b-8b61-57ae81fab4ce.png)
  
 - In this workshop we are using the **picorv32a** design: 
  ![image](https://user-images.githubusercontent.com/57360760/182905986-db82a812-0e88-4e9b-a9d7-da47cebe2a83.png)
  
-- In `config.tcl` as well as in `sky130A_sky130_fd_sc_hd_config.tcl` I changed the `CLOCK_PERIOD` as show in the lab videos:
- - `config.tcl`. The variables used in this files are described in Day 2 and can be found in the `/Desktop/work/tools/openlane_working_dir/openlane/configuration/README.md` file.
+- The variables used in the configuration files (i.e., `config.tcl` and `sky130A_sky130_fd_sc_hd_config.tcl`) are described in Day 2 and can be found in the `/Desktop/work/tools/openlane_working_dir/openlane/configuration/README.md`. At the beginning `config.tcl` has the following content: <br/>
   ![image](https://user-images.githubusercontent.com/57360760/183244530-350722fd-ff90-4817-ad81-2b594a7a886e.png)
  
- - `sky130A_sky130_fd_sc_hd_config.tcl`:<br/>
+ - While `sky130A_sky130_fd_sc_hd_config.tcl` has the following content: <br/>
   ![image](https://user-images.githubusercontent.com/57360760/183244638-9ee4e49d-33f4-44aa-b1bf-08985b3c850e.png)
  
 - Afterwards we prep the design:
