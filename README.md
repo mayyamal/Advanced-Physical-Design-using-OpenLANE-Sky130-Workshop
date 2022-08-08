@@ -217,7 +217,7 @@ The timing characterization, in turn, includes timing treshold, propagation dela
 - The slack improved a bit, but it is still significantly high: <br/> 
  ![image](https://user-images.githubusercontent.com/57360760/183429698-a21bd345-f4d1-4f44-9196-85f2630216e7.png) <br/>
  
-- I tried to modify the other high fanout `buf_2_1` cells, but the slack did not improve :confused:  
+- I tried to modify the other high fanout `mux_2_1` cells, but the slack did not improve :confused:  
  
 - To verify that the netlist is modified we will search for the cell `_42923_` and verify it was changed from `dfxtp_2` to `dfxtp_4`: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183430503-65f665a0-e278-4d56-bea9-3b2539bdfc06.png) <br/>
