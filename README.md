@@ -14,65 +14,65 @@ The goal of [openLANE](https://github.com/The-OpenROAD-Project/OpenLane) is to p
 ## Day 1. Inception of open-source EDA, openLANE and SkyWater 130
 
 - From `‌/Desktop/work/tools/openlane_working_dir/openlane` we should start docker and execute the following commands to get into the openLANE environment:
- ![image](https://user-images.githubusercontent.com/57360760/182897041-3674f729-4e5d-4a5b-8b61-57ae81fab4ce.png)
+ ![image](https://user-images.githubusercontent.com/57360760/182897041-3674f729-4e5d-4a5b-8b61-57ae81fab4ce.png) <br/>
  
 - In this workshop we are using the **picorv32a** design: 
- ![image](https://user-images.githubusercontent.com/57360760/182905986-db82a812-0e88-4e9b-a9d7-da47cebe2a83.png)
+ ![image](https://user-images.githubusercontent.com/57360760/182905986-db82a812-0e88-4e9b-a9d7-da47cebe2a83.png) <br/>
  
 - The variables used in the configuration files (i.e., `config.tcl` and `sky130A_sky130_fd_sc_hd_config.tcl`) are described in Day 2 and can be found in the `/Desktop/work/tools/openlane_working_dir/openlane/configuration/README.md`. At the beginning `config.tcl` has the following content: <br/>
-  ![image](https://user-images.githubusercontent.com/57360760/183244530-350722fd-ff90-4817-ad81-2b594a7a886e.png)
+  ![image](https://user-images.githubusercontent.com/57360760/183244530-350722fd-ff90-4817-ad81-2b594a7a886e.png) <br/>
  
  - While `sky130A_sky130_fd_sc_hd_config.tcl` has the following content: <br/>
-  ![image](https://user-images.githubusercontent.com/57360760/183244638-9ee4e49d-33f4-44aa-b1bf-08985b3c850e.png)
+  ![image](https://user-images.githubusercontent.com/57360760/183244638-9ee4e49d-33f4-44aa-b1bf-08985b3c850e.png) <br/>
  
 - Afterwards we prep the design:
- ![image](https://user-images.githubusercontent.com/57360760/182964268-909ea4f1-47a2-4656-8771-a5168023a7eb.png)
+ ![image](https://user-images.githubusercontent.com/57360760/182964268-909ea4f1-47a2-4656-8771-a5168023a7eb.png) <br/>
 
 - In `/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a` a `runs` folder is created: 
- ![image](https://user-images.githubusercontent.com/57360760/182964446-0c2c56a3-b246-4a2b-b9d0-d7dc4cf4be08.png)
+ ![image](https://user-images.githubusercontent.com/57360760/182964446-0c2c56a3-b246-4a2b-b9d0-d7dc4cf4be08.png) <br/>
 
 - The merged LEF files are found in the `<path_to_run>/merged.lef`. It contains information about the technology and the cells in the standard cell library. This is an example of a DFF cell:
- ![image](https://user-images.githubusercontent.com/57360760/182964659-11209850-2bb9-41fe-b9c6-eaf42cb1a9f1.png)
+ ![image](https://user-images.githubusercontent.com/57360760/182964659-11209850-2bb9-41fe-b9c6-eaf42cb1a9f1.png) <br/>
 
  
 - Finally we run the **synthesis** using the `run_synthesis` command. The synthesis (done using **yosys**) converts the picorv32a RTL to a gate-level netlist using the skywater standard cell library. 
 
 - The flip flop ratio in my synthesized design is 10.8% (i.e., 1613/14876), where 1613 is the number of DFFs (`sky130_fd_sc_hd__dfxtp_2`) and 14876 is the total number of cells: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/182966275-228cc155-3c02-423e-81a3-e23858d2a132.png) <br/>
- ![image](https://user-images.githubusercontent.com/57360760/182966507-e7ceb870-a8a4-4a4b-9095-bf8ade7ea2db.png)
+ ![image](https://user-images.githubusercontent.com/57360760/182966507-e7ceb870-a8a4-4a4b-9095-bf8ade7ea2db.png) <br/>
  
 - The synthesized netlist is stored in `/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/<run>/results/synthesis`:
- ![image](https://user-images.githubusercontent.com/57360760/182968718-02cedb3f-6f42-48b0-929c-127929941c3a.png)
- ![image](https://user-images.githubusercontent.com/57360760/182969643-159d296d-7f9c-4bf5-a809-248909e07008.png)
+ ![image](https://user-images.githubusercontent.com/57360760/182968718-02cedb3f-6f42-48b0-929c-127929941c3a.png) <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/182969643-159d296d-7f9c-4bf5-a809-248909e07008.png) <br/>
  
 - The reports are stored in `/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/<run>/reports/synthesis`. In `1_yosys_4.stat.rpt` we can observe the same numbers shown above after synthesys: <br/>
- ![image](https://user-images.githubusercontent.com/57360760/182969978-22325681-72e1-440e-a313-4cba2a08777b.png)
+ ![image](https://user-images.githubusercontent.com/57360760/182969978-22325681-72e1-440e-a313-4cba2a08777b.png) <br/>
 
 
 ## Day 2. Good floorplan vs bad floorplan and introduction to library cells
 
 - The next step after synthesis is **floorplaning**. It consist of chip floorplanning, macro floorplanning, and power planning.
 - Before running the floorplan, we need to configure some variables.
- ![image](https://user-images.githubusercontent.com/57360760/183244330-a67fe66a-caa5-45e9-b809-0f9f8f2717b0.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183244330-a67fe66a-caa5-45e9-b809-0f9f8f2717b0.png) <br/>
  
 - The `README` file shows all the variables/switches required at different stages of the desing flow (e.g., `FP_CORE_UTIL` - the core utilization percentage; `FP_ASPECT_RATIO` - the core's aspect ratio (height / width), `FP_IO_HMETAL` - the metal layer on which to place the io pins horizontally `FP_IO_VMETAL` - the metal layer on which to place the io pins vertically).
 - This variables are set with their defaults in the `.tcl` files shown above (this files have the lowest precedence). For the chosen design (e.g., picorv32a), as mentioned in Day 1, the switches are set in the `config.tcl` and `sky130A_sky130_fd_sc_hd_config.tcl` files  in the `/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a` directory. The `sky130A_sky130_fd_sc_hd_config.tcl` has the highest precedence. (❗ Don't forget to prep the design after changing values in the config files, and rerun synthesis and floorplanning).
 
 - The new content of `config.tcl` is: <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183245258-06e18032-5007-41f3-9d93-53c10e506bbf.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183245258-06e18032-5007-41f3-9d93-53c10e506bbf.png) <br/>
 
 - The new content of `sky130A_sky130_fd_sc_hd_config.tcl` is: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183256588-ddfeb0b1-b8f0-469f-8b9f-4adb1e90f16f.png) <br/>
 
 - Since the values in `sky130A_sky130_fd_sc_hd_config.tcl` have higher precedence, the current values of this variables for the current flow, after `run_floorplan`, are: <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183257433-5019afdb-9726-4440-a719-37be4f182035.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183257433-5019afdb-9726-4440-a719-37be4f182035.png) <br/>
 
 - The same values for the current flow can be seen in `<path_to_run>/config.tcl`: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183251745-75dcb57c-5b34-47e4-895b-b8457b294792.png) <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183257495-a7ab1fb9-6f74-4bee-b59c-f1113f6d0320.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183257495-a7ab1fb9-6f74-4bee-b59c-f1113f6d0320.png) <br/>
  
 - The area of the chip, as specified in `/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/06-08_10-41/results/floorplan/picorv32a.floorplan.def`, is 556.4 x 567.12 microns.
- ![image](https://user-images.githubusercontent.com/57360760/183257588-fe320fa4-069e-4047-88fe-c9c538bd1db1.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183257588-fe320fa4-069e-4047-88fe-c9c538bd1db1.png) <br/>
 
  - We use **magic** to see the layout after the floorplan: <br/>
   `<path_to>results/floorplan$ magic -T ../../../../../../../pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &` <br/>
@@ -83,15 +83,15 @@ The goal of [openLANE](https://github.com/The-OpenROAD-Project/OpenLane) is to p
 
 - After floorplanning, the next step is the **placement** (`run_placement`). In this step, the position of the standard cells is fixed. <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183266900-66ebd8b2-0d91-4631-b941-8198beaf9ab4.png) <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183266948-4ee4b8a8-5e58-47c4-b9f2-6f87f9838794.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183266948-4ee4b8a8-5e58-47c4-b9f2-6f87f9838794.png) <br/>
 
 
 ## Day 3. Design library cell using Magic Layout and ngspice characterization
 
 - In this part of the lab, we will use the [CMOS inverter standard cell](https://github.com/nickson-jose/vsdstdcelldesign), plug it into the openlane flow, and integrate it into the picorv32a design. We will be doing SPICE extraction and post-layout SPICE simulation. <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183284174-99ed03ee-c8b4-4f02-8149-e262ac81959f.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183284174-99ed03ee-c8b4-4f02-8149-e262ac81959f.png) <br/>
 - We first copy the `sky130A.tech` file into the cloned repo. This file gives all the information about the SkyWater sky130 fabrication process: <br/> 
- ![image](https://user-images.githubusercontent.com/57360760/183284463-c8867b74-6886-4a6d-bfbc-89cf1864dfcb.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183284463-c8867b74-6886-4a6d-bfbc-89cf1864dfcb.png) <br/>
  
 - We can see the layout of the invertor using **magic**: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183284512-ecf1438b-4200-4614-8fdd-e160ca58c4a8.png) <br/>
@@ -111,7 +111,7 @@ The goal of [openLANE](https://github.com/The-OpenROAD-Project/OpenLane) is to p
 - The plot of the inverter look like this: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183288981-74a6e549-c74b-4718-8ae0-7cfeb46053d1.png)  <br/> 
  
-- Next, we will do a library characterization of the inverter. Characterization is the last step and gives the timing, noise, power information.
+- Next, we will do a library characterization of the inverter. Characterization is the last step and gives the timing, noise, and power information.
 The timing characterization, in turn, includes timing treshold, propagation delay, and transition time.
 
 - The rise transition time (20% to 80%) is approx. `2.20-2.16 = 0.04 ns` <br/>
@@ -149,16 +149,16 @@ The timing characterization, in turn, includes timing treshold, propagation dela
 - We copy the libraries: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183310022-ed216524-1cc3-4c70-b587-5fd45349b094.png) <br />
 - We modify the `config.tcl` <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183311233-8a7fbb7e-3d41-47a6-a70b-62ff50bad86b.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183311233-8a7fbb7e-3d41-47a6-a70b-62ff50bad86b.png) <br/>
 
  
 - We prep the design <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183311139-588e08cb-ff0f-4ab0-9a47-18c22732a565.png)
- ![image](https://user-images.githubusercontent.com/57360760/183313045-20960796-72e4-4ec0-9042-dab2e23eef70.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183311139-588e08cb-ff0f-4ab0-9a47-18c22732a565.png) <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183313045-20960796-72e4-4ec0-9042-dab2e23eef70.png) <br/>
 - After `run_synthesis` we can see the new cell: <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183313229-19bb9c27-35cc-43f0-9b25-f7e7570fbb79.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183313229-19bb9c27-35cc-43f0-9b25-f7e7570fbb79.png) <br/>
  as well as a slack violation ❓ (is wsn that) <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183313291-24df1174-4ce1-4fcd-9cf5-f31972cb3d8f.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183313291-24df1174-4ce1-4fcd-9cf5-f31972cb3d8f.png) <br/>
  
 - ❗ `prep -design picorv32a -tag <tag name of the run>` - if you want the results from the last run, or <br/>
 `prep -design picorv32a -tag <tag name of the run> -overwritre` - to overwrite the last configuration with the new values in the `config.tcl` file. 
