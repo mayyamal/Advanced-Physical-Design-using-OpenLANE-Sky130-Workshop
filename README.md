@@ -288,7 +288,11 @@ As described in Day1 there are several floorplans: chip floor-planning, macro fl
 ![image](https://user-images.githubusercontent.com/57360760/183445328-26d049b5-7e3f-4685-ad08-24e95e78da4f.png)
 
   
-  
+- Next we execute the command which were previosuly loaded from `pre_sta.conf` <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183449034-c0e5e03f-0761-4f51-a777-a2aa6923dd4c.png) <br/>
+ ![image](https://user-images.githubusercontent.com/57360760/183449248-7ae39b8b-a0e7-426e-ad1a-cd568cb32b2f.png)
+
+
 
 
 
