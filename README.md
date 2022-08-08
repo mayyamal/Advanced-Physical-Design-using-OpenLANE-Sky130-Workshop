@@ -286,7 +286,7 @@ The timing characterization, in turn, includes timing treshold, propagation dela
 - The value of setup slack is: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183459978-33bf6e4b-948b-48f5-ad2e-09887a1990c8.png) <br/>
  
-- Both hold and setup slacks have improved, on the expense of the area. The setup slac improved from `4.1607` to `4.2278`, while the hold slack improved from `0.1049` to `0.3160`.
+- Both hold and setup slacks have improved, on the expense of the area. The setup slack improved from `4.1607` to `4.2278`, while the hold slack improved from `0.1049` to `0.3160`.
 
 - Next steps will be **routing** and post-routing STA. 
 
