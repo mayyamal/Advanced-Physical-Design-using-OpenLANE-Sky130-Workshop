@@ -272,27 +272,24 @@ The timing characterization, in turn, includes timing treshold, propagation dela
  
 - Both slacks are met, the clock tree synthesis doesn't have any violations.
 
-
 - Let's try to modify the `CTS_CLK_BUFFER_LIST` and remove the `sky130_fd_sc_hd__clkbuf_1` buffer <br/>
-![image](https://user-images.githubusercontent.com/57360760/183454743-41da9f9b-58c7-4f37-bdd6-b4846ce789b8.png)
- <br/>
-- We `run_cts`, but we have to forcefully stop it, since it is stuck!
+![image](https://user-images.githubusercontent.com/57360760/183454743-41da9f9b-58c7-4f37-bdd6-b4846ce789b8.png)  <br/>
+- We have to forcefully stop the `run_cts`, since it was stuck!
  
-- We need to do the following: <br/>
+- In order to make We need to do the following: <br/>
   ![image](https://user-images.githubusercontent.com/57360760/183457820-cd7e3e2a-08e3-4bd9-bc6f-56f681f9abfc.png) <br/>
   ![image](https://user-images.githubusercontent.com/57360760/183458124-dcaff153-f43e-4528-9902-78007430930c.png) <br/>
-  ![image](https://user-images.githubusercontent.com/57360760/183458294-c0820820-e410-4204-9aa0-2b28a3e8ea58.png)
+  ![image](https://user-images.githubusercontent.com/57360760/183458294-c0820820-e410-4204-9aa0-2b28a3e8ea58.png) <br/>
 
 - Next, we execute the same commands as before: <br/>
-  ![image](https://user-images.githubusercontent.com/57360760/183459712-9481ba5f-854d-4714-962b-c01850e1c623.png)
+  ![image](https://user-images.githubusercontent.com/57360760/183459712-9481ba5f-854d-4714-962b-c01850e1c623.png) <br/>
 - The value of hold slack is: <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183459883-016db9fb-4966-4bef-bd49-8e87d0e9a857.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183459883-016db9fb-4966-4bef-bd49-8e87d0e9a857.png) <br/>
 - The value of setup slack is: <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183459978-33bf6e4b-948b-48f5-ad2e-09887a1990c8.png)
-
+ ![image](https://user-images.githubusercontent.com/57360760/183459978-33bf6e4b-948b-48f5-ad2e-09887a1990c8.png) <br/>
 - Both hold and setup slacks have improved, on the expense of the area.
 
-- Next step will be **routing** and post-routing STA. 
+- Next steps will be **routing** and post-routing STA. 
 
 ## Day 5. Final steps for RTL2GDS using tritonRoute and openSTA
 
