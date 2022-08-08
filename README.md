@@ -186,7 +186,7 @@ The timing characterization, in turn, includes timing treshold, propagation dela
  `detailed_placement` <br/>
  `tap_decap_or` <br/>
  `detailed_placement` <br/>
- `gen_pdn` - Runs basic power grid generation on the processed design using the openroad app.` <br/>
+ `gen_pdn` <br/>
  
 - After `global_placement_or`: <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183318749-f9e34390-4e61-4052-93b1-8a4fda00e1e3.png) <br/>
@@ -291,22 +291,19 @@ The timing characterization, in turn, includes timing treshold, propagation dela
 
 ## Day 5. Final steps for RTL2GDS using tritonRoute and openSTA
 
-- ❗ He ran `gen_pdn` for power distribution of power and ground. But we included in the new set of commands.
-- We can see the `pdn.def` created before <br/>
+- In the video, the next step was to run `gen_pdn` for basic power grid generation. Since we included this step in the new set of commands before, we didn't run it this time. 
+
+- We can see the `pdn.def` created before: <br/>
 ![image](https://user-images.githubusercontent.com/57360760/183470708-c7c547ab-f57c-44d1-afec-741d807e7337.png)
 
 - Finally we do the routing with `run_routing`. The routing engine used is TritonRoute. <br/> 
  ![image](https://user-images.githubusercontent.com/57360760/183476372-df90ef04-1323-4c1e-8f31-0b876146b858.png)
  
-
-- Since we used the default `ROUTING_STRATEGY`, the routing finished with 5 violation (in 64 optimization runs). In case we chose `TritinRoute = 14`, the number of violations would have been zero, on the expense of a very time consuming routing process and memory utilization. <br/>
+- Since we used the default `ROUTING_STRATEGY` (i.e., TritonRoute = 0), the routing finished with 5 violation (in 64 optimization runs). In case we chose `TritonRoute = 14`, the number of violations would have been zero, on the expense of a very time consuming routing process and memory utilization. <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183479946-c7ab5256-eaf0-4164-8288-c1911a52b855.png) <br/>
- ![image](https://user-images.githubusercontent.com/57360760/183479607-b1eff7e7-212b-4a66-ba7d-9fb6f16240ad.png)
+ ![image](https://user-images.githubusercontent.com/57360760/183479607-b1eff7e7-212b-4a66-ba7d-9fb6f16240ad.png) <br/>
 
 
 - The violations can be manually modified in `<path_to_run>/reports/routing/tritonRoute.drc` <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183479174-f8715989-a6fb-4737-b6e8-aa551d4b7cac.png)
-
-
-- 
 
