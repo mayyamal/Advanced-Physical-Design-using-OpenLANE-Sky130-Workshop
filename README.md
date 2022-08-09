@@ -88,7 +88,7 @@ The goal of [openLANE](https://github.com/The-OpenROAD-Project/OpenLane) is to p
 
 ## Day 3. Design library cell using Magic Layout and ngspice characterization
 
-- In this part of the lab, we will use the [CMOS inverter standard cell](https://github.com/nickson-jose/vsdstdcelldesign), plug it into the openlane flow, and integrate it into the picorv32a design. We will be doing SPICE extraction and post-layout SPICE simulation. <br/>
+- In this part of the lab, we will use the [CMOS inverter standard cell](https://github.com/nickson-jose/vsdstdcelldesign), plug it into the openlane flow, and integrate it into the picorv32a design. <br/>
  ![image](https://user-images.githubusercontent.com/57360760/183284174-99ed03ee-c8b4-4f02-8149-e262ac81959f.png) <br/>
 - We first copy the `sky130A.tech` file into the cloned repo. This file gives all the information about the SkyWater sky130 fabrication process: <br/> 
  ![image](https://user-images.githubusercontent.com/57360760/183284463-c8867b74-6886-4a6d-bfbc-89cf1864dfcb.png) <br/>
